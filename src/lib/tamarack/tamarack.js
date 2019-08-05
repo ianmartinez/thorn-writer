@@ -175,8 +175,8 @@ tk.Element = class {
 		return this.getAttribute("role");
 	}
 
-	set role(_role)	{
-		this.setAttribute("role",_role);
+	set role(role)	{
+		this.setAttribute("role", role);
 	}
 
 	addClass(...classes)	{
