@@ -29,6 +29,20 @@ tk.fallback = function(object, objectIfUndefined) {
 	return tk.isDefined(object) ? object : objectIfUndefined;
 }
 
+tk.Size = class {
+	width = 0;
+	height = 0;
+
+	constructor(width, height) {
+		this.width = tk.fallback(width, 0);
+		this.height = tk.fallback(height, 0);
+	}
+
+	getArea() {
+		return this.width * this.height;
+	}
+}
+
 tk.Element = class {
 	_base; // The html element
 
@@ -543,8 +557,7 @@ tk.Notebook = class extends tk.Widget {
 	}
 }
 
-
-tk.LayoutPanel = class extends tk.Widget {
+tk.Layout = class extends tk.Widget {
 	constructor(options) {
 		this.direction = tk.fallback(options.direction, tk.LayoutDirection.HORIZONTAL);		
 		this.resizable = tk.fallback(options.resizable, false);
