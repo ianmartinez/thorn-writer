@@ -1,10 +1,10 @@
 var tk = {};
 
 // Enums
-tk.LayoutDirection = {
+tk.LayoutDirection = Object.freeze({
 	HORIZONTAL: 0,
 	VERTICAL: 1
-};
+});
 
 // Helper functions
 tk.make = function(tag) {
