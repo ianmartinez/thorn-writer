@@ -1,5 +1,12 @@
 var tk = {};
 
+// Enums
+tk.LayoutDirection = {
+	HORIZONTAL: 0,
+	VERTICAL: 1
+};
+
+// Helper functions
 tk.make = function(tag) {
 	return document.createElement(tag);
 };
@@ -14,17 +21,25 @@ tk.textElement = function(tag, text) {
 	return element;
 }
 
+tk.isDefined = function(object) {
+	return typeof object !== "undefined";
+}
+
+tk.fallback = function(object, objectIfUndefined) {
+	return tk.isDefined(object) ? object : objectIfUndefined;
+}
+
 tk.Element = class {
 	_base; // The html element
 
 	constructor(element, options) {
-		this._base = element || document.body; 
+		this._base = tk.isDefined(element) ? element : document.body; 
 
-		if(options) {
-			if(this.className)
+		if(tk.isDefined(options)) {
+			if(tk.isDefined(this.className))
 				this.className = options.className;
 
-			if (options.attributes) {
+			if (tk.isDefined(options.attributes)) {
 				options.attributes.forEach((attribute => 
 					this._base.setAttribute(attribute.name, attribute.value)));
 			}		
@@ -276,11 +291,14 @@ tk.Element = class {
 } 
 
 tk.Document = class extends tk.Element {
-	constructor(options) {
+	constructor(title, options) {
 		super(document.body, options);
+
+		if(tk.isDefined(title))
+			this.title = title;
 	}
 
-	static onLoaded(callback) {
+	onLoaded(callback) {
 		if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
 		  callback();
 		} else {
@@ -288,17 +306,30 @@ tk.Document = class extends tk.Element {
 		}
 	}
 
-	static onExit(callback) {
+	onExit(callback) {
 		
 	}
 
-	static getTitle()	{
+	get title()	{
 		return document.title;
 	}
+	
+	set title(title) {
+		document.title = title;
+	}
 
-	static buildUrl(urlBase, args, values) {
+	get icon()	{
+		return document.title;
+	}
+	
+	set icon(title) {
+		document.title = title;
+	}
+
+	buildUrl(urlBase, args, values) {
 		let url = urlBase + "?";
 		let max = Math.min(args.length, values.length);
+
 		for(var i=0; i<max; i++) {
 			url += args[i] + "=" + values[i];
 			if (i < max-1) url += "&";
@@ -307,28 +338,25 @@ tk.Document = class extends tk.Element {
 		return url;
 	}
 
-	static parseUrl(name, url) {
+	parseUrl(name, url) {
 		if (!url)
 			url = window.location.href;
 		
 		name = name.replace(/[\[\]]/g, "\\$&");
 		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
 			results = regex.exec(url);
+
 		if (!results) return null;
 		if (!results[2]) return '';
 		return decodeURIComponent(results[2].replace(/\+/g, " "));
 	}
 
-	static getParameter(name)	{
+	getParameter(name)	{
 		return this.parseUrl(name, this.getUrl());
 	}
 				
-	static getUrl() {
+	getUrl() {
 		return window.location.href;
-	}
-	
-	static setTitle(title) {
-		document.title = title;
 	}
 }
 
@@ -372,7 +400,7 @@ tk.Widget = class extends tk.Element {
 		}
 	}
 
-	get Tooltip() {
+	get tooltip() {
 		// TODO: PopperJs
 		return "";
 	}
@@ -385,7 +413,7 @@ tk.Widget = class extends tk.Element {
 tk.Text = class extends tk.Widget {
 	constructor(tag, text, options) {
 		super(tag, options);
-		this.textNode = document.createTextNode(text || "");
+		this.textNode = document.createTextNode(tk.fallback(text, ""));
 		this.element.appendChild(this.textNode);
 	}
 
@@ -395,5 +423,157 @@ tk.Text = class extends tk.Widget {
 	
 	set text(value) {
 		this.textNode.nodeValue = value;
+	}
+}
+
+tk.Link = class extends tk.Text {
+	constructor(text, url, options) {
+		super("a", text, options);		
+		this.url = tk.fallback(url, "#");		
+	}
+
+	get url() {
+		return this.getAttribute("href");
+	}
+
+	set url(url) {
+		this.setAttribute("href", url);
+	}
+}
+
+tk.NotebookPage = class {
+	constructor(title, id) {
+
+	}
+	
+	get title() {
+	}
+	
+	set title(text) {
+	}
+
+	get hidden() {
+
+	}
+
+	set hidden(hidden) {
+
+	}
+
+	get sheet() {
+
+	}
+
+	set sheet(tabSheet) {
+
+	} 
+
+	get button() {
+
+	}
+
+	set button(button) {
+
+	} 
+
+	get icon() {
+
+	}
+
+	set icon(icon) {
+
+	}
+}
+
+tk.Notebook = class extends tk.Widget {
+	constructor(options) {
+		super(options);
+	}
+	
+	addPage(...pages) {
+
+	}
+	
+	removePage(...pages) {		
+
+	}	
+
+	clear() {
+
+	}
+
+	get active() {
+
+	}
+
+	set active(page) {
+
+	}
+	
+	get activeIndex() {
+
+	}
+	
+	set activeIndex(index) {
+
+	}
+
+	get tabsVisible() {
+
+	}
+	
+	set tabsVisible(visible) {
+
+	}
+	
+	indexOf(page) {
+
+	}
+
+	get pageCount() {
+
+	}
+		
+	back() {
+			
+	}
+	
+	next() {
+
+	}
+}
+
+
+tk.LayoutPanel = class extends tk.Widget {
+	constructor(options) {
+		this.direction = tk.fallback(options.direction, tk.LayoutDirection.HORIZONTAL);		
+		this.resizable = tk.fallback(options.resizable, false);
+		this.panels = tk.fallback(options.panels, []);		
+
+		super(options);
+	}
+
+	get direction() {
+
+	}
+
+	set direction(layoutDirection) {
+
+	}
+
+	get resizable() {
+
+	}
+
+	set resizable(resizable) {
+
+	}
+
+	get panels() {
+
+	}
+
+	set panels(panels) {
+
 	}
 }
