@@ -50,14 +50,20 @@ tk.Element = class {
 		this._base = tk.isDefined(element) ? element : document.body; 
 
 		if(tk.isDefined(options)) {
-			if(tk.isDefined(this.className))
+			if(tk.isDefined(options.className))
 				this.className = options.className;
 
 			if (tk.isDefined(options.attributes)) {
-				options.attributes.forEach((attribute => 
-					this._base.setAttribute(attribute.name, attribute.value)));
-			}		
-		}	
+				var attributeNames = Object.keys(options.attributes);
+				console.log(attributeNames)
+
+				attributeNames.forEach(attributeName => 
+					this._base.setAttribute(attributeName, options.attributes[attributeName]));
+			}	
+
+			if (tk.isDefined(options.style))
+				this._base.setAttribute("style", options.style);
+		}
 	}
 
 	static from(selector) {
@@ -378,7 +384,7 @@ tk.Widget = class extends tk.Element {
 	_parent; // The parent tk.Element of a tk.Widget
 
 	constructor(tag, options) {
-		super(tk.make(tag || "div"), options);
+		super(tk.make(tk.fallback(tag, "div")), options);
 	}	
 
 	getParent() {
@@ -555,6 +561,14 @@ tk.Notebook = class extends tk.Widget {
 	next() {
 
 	}
+}
+
+tk.NotebookMenuPage = class extends tk.NotebookPage {
+
+}
+
+tk.NotebookMenu = class extends tk.Notebook {
+
 }
 
 tk.Layout = class extends tk.Widget {
