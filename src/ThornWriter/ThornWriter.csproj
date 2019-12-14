@@ -22,4 +22,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Thorn\Thorn.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
 </Project>

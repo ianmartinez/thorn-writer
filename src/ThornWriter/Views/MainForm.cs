@@ -2,6 +2,7 @@ using System;
 using Eto.Forms;
 using Eto.Drawing;
 using Thorn.NotebookFile;
+using System.Reflection;
 
 namespace ThornWriter
 {
@@ -9,7 +10,9 @@ namespace ThornWriter
 	{
 		public MainForm()
 		{
-			Title = "My Eto Form";
+            var version = Assembly.GetEntryAssembly().GetName().Version;
+            Title = string.Format("Thorn Writer {0}.{1}", version.Major, version.Minor);
+
 			ClientSize = new Size(400, 350);
 
 			Content = new StackLayout
@@ -18,6 +21,7 @@ namespace ThornWriter
 				Items =
 				{
 					"Hello World!",
+                    new WebView() {Width = 200, Height=200, Url=new Uri("https://google.com/")}
 					// add more controls here
 				}
 			};
@@ -27,10 +31,10 @@ namespace ThornWriter
 			clickMe.Executed += (sender, e) => MessageBox.Show(this, "I was clicked!");
 
 			var quitCommand = new Command { MenuText = "Quit", Shortcut = Application.Instance.CommonModifier | Keys.Q };
-			quitCommand.Executed += (sender, e) => Application.Instance.Quit();
+			quitCommand.Executed += OnQuit;
 
 			var aboutCommand = new Command { MenuText = "About..." };
-			aboutCommand.Executed += (sender, e) => new AboutDialog().ShowDialog(this);
+			aboutCommand.Executed += OnAbout;
 
 			// create menu
 			Menu = new MenuBar
@@ -39,8 +43,8 @@ namespace ThornWriter
 				{
 					// File submenu
 					new ButtonMenuItem { Text = "&File", Items = { clickMe } },
-					// new ButtonMenuItem { Text = "&Edit", Items = { /* commands/items */ } },
-					// new ButtonMenuItem { Text = "&View", Items = { /* commands/items */ } },
+					new ButtonMenuItem { Text = "&Edit", Items = { /* commands/items */ } },
+					//new ButtonMenuItem { Text = "&View", Items = { /* commands/items */ } },
 				},
 				ApplicationItems =
 				{

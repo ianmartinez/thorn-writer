@@ -1,17 +1,22 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Thorn/Web/IWebViewManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter.XamMac/Info.plist">
     <Files>
       <File FileName="../../../../../../usr/local/share/dotnet/sdk/3.0.101/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FrameworkReferenceResolution.targets" Line="324" Column="6" />
       <File FileName="../../../../../../usr/local/share/dotnet/sdk/3.1.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FrameworkReferenceResolution.targets" />
-      <File FileName="ThornWriter/MainForm.cs" Line="1" Column="1" />
+      <File FileName="ThornWriter/MainForm.cs" Line="47" Column="8" />
       <File FileName="Thorn/Class1.cs" Line="1" Column="1" />
       <File FileName="Thorn/NotebookFile/Dictionary.cs" Line="1" Column="1" />
       <File FileName="Thorn/NotebookFile/KeyValue.cs" Line="1" Column="1" />
       <File FileName="Thorn/NotebookFile/Notebook.cs" Line="14" Column="42" />
-      <File FileName="Thorn/NotebookFile/TempFolder.cs" Line="1" Column="1" />
+      <File FileName="Thorn/NotebookFile/TempFolder.cs" Line="30" Column="63" />
       <File FileName="Thorn/NotebookFile/Page.cs" Line="1" Column="1" />
       <File FileName="Thorn/Web/IWebViewManager.cs" Line="13" Column="21" />
+      <File FileName="ThornWriter.XamMac/Program.cs" Line="1" Column="1" />
+      <File FileName="ThornWriter.Desktop/Info.plist" />
+      <File FileName="ThornWriter.Desktop/Program.cs" Line="1" Column="1" />
+      <File FileName="ThornWriter/Controllers/MainForm.cs" Line="11" Column="27" />
+      <File FileName="ThornWriter.XamMac/Info.plist" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,20 +29,14 @@
               <Node name="NotebookFile" expanded="True" />
               <Node name="Web" expanded="True" />
             </Node>
-            <Node name="ThornWriter" expanded="True" selected="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
+            <Node name="ThornWriter" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True" />
             </Node>
             <Node name="ThornWriter.Desktop" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-                <Node name="ProjectDependencies" expanded="True" />
-              </Node>
+              <Node name="Info.plist" selected="True" />
             </Node>
-            <Node name="ThornWriter.XamMac" expanded="True">
-              <Node name="Packages" expanded="True" />
-            </Node>
+            <Node name="ThornWriter.XamMac" expanded="True" />
           </Node>
         </State>
       </Pad>

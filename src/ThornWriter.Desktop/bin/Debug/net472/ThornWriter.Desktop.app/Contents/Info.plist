@@ -3,9 +3,9 @@
 <plist version="1.0">
   <dict>
     <key>CFBundleName</key>
-    <string>ThornWriter</string>
+    <string>Thorn Writer</string>
     <key>CFBundleIdentifier</key>
-    <string>com.example.ThornWriter</string>
+    <string>com.ianmartinez.ThornWriter</string>
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>LSMinimumSystemVersion</key>
@@ -15,6 +15,8 @@
     <key>NSHumanReadableCopyright</key>
     <string>
     </string>
+    <key>NSRequiresAquaSystemAppearance</key>
+    <false />
     <key>CFBundleIconFile</key>
     <string>MacIcon.icns</string>
     <key>CFBundleInfoDictionaryVersion</key>
