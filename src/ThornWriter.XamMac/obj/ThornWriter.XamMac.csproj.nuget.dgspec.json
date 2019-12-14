@@ -1,0 +1,108 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter.XamMac/ThornWriter.XamMac.csproj": {}
+  },
+  "projects": {
+    "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter.XamMac/ThornWriter.XamMac.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter.XamMac/ThornWriter.XamMac.csproj",
+        "projectName": "ThornWriter.XamMac",
+        "projectPath": "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter.XamMac/ThornWriter.XamMac.csproj",
+        "packagesPath": "/Users/ianmartinez/.nuget/packages/",
+        "outputPath": "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter.XamMac/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/ianmartinez/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinmac20"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinmac20": {
+            "projectReferences": {
+              "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/ThornWriter.csproj": {
+                "projectPath": "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/ThornWriter.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinmac20": {
+          "dependencies": {
+            "Eto.Platform.XamMac2": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/ThornWriter.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/ThornWriter.csproj",
+        "projectName": "ThornWriter",
+        "projectPath": "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/ThornWriter.csproj",
+        "packagesPath": "/Users/ianmartinez/.nuget/packages/",
+        "outputPath": "/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/ianmartinez/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.6"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.6": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard1.6": {
+          "dependencies": {
+            "Eto.Forms": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
