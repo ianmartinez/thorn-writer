@@ -67,7 +67,7 @@ namespace ThornWriter
             {
                 var pageBody = Document.Pages[pageIndex].Content;
                 var pageContent = Resources.DocumentBase.Replace("{DocumentBody}", pageBody);
-                DocumentPreview.LoadHtml(pageContent);
+                PreviewManager.Content = pageContent;
                 var result = await PreviewManager.RunScript("sayHello('" + pageIndex + "');");
                 MessageBox.Show(result);
             }
