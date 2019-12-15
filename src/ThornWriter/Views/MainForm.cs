@@ -22,6 +22,8 @@ namespace ThornWriter
 			ClientSize = new Size(700, 500);
             // Set managers
             PreviewManager = new EtoWebViewManager(DocumentPreview);
+            EditManager = new EtoWebViewManager(DocumentEditor);
+            DocumentEdit = new TextEditor(EditManager);
 
             // Page Selector
             PageSelector.Columns.Add(new GridColumn() {
@@ -43,7 +45,6 @@ namespace ThornWriter
                 });
             }
             LoadPages();
-
 
             // Document Splitter
             DocumentSplitter.Panel1 = DocumentPreview;

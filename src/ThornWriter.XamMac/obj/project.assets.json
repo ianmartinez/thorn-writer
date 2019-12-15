@@ -566,12 +566,26 @@
           "lib/xamarinmac20/_._": {}
         }
       },
+      "Thorn/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "bin/placeholder/Thorn.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Thorn.dll": {}
+        }
+      },
       "ThornWriter/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
           "Eto.Forms": "2.4.1",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "Thorn": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ThornWriter.dll": {}
@@ -1082,12 +1096,26 @@
           "lib/xamarinmac20/_._": {}
         }
       },
+      "Thorn/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "bin/placeholder/Thorn.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Thorn.dll": {}
+        }
+      },
       "ThornWriter/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
           "Eto.Forms": "2.4.1",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "Thorn": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ThornWriter.dll": {}
@@ -1598,12 +1626,26 @@
           "lib/xamarinmac20/_._": {}
         }
       },
+      "Thorn/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "bin/placeholder/Thorn.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Thorn.dll": {}
+        }
+      },
       "ThornWriter/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
           "Eto.Forms": "2.4.1",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "Thorn": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ThornWriter.dll": {}
@@ -2114,12 +2156,26 @@
           "lib/xamarinmac20/_._": {}
         }
       },
+      "Thorn/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "bin/placeholder/Thorn.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Thorn.dll": {}
+        }
+      },
       "ThornWriter/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
           "Eto.Forms": "2.4.1",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "Thorn": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ThornWriter.dll": {}
@@ -4981,6 +5037,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Thorn/1.0.0": {
+      "type": "project",
+      "path": "../Thorn/Thorn.csproj",
+      "msbuildProject": "../Thorn/Thorn.csproj"
     },
     "ThornWriter/1.0.0": {
       "type": "project",

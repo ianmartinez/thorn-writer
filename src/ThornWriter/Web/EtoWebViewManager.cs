@@ -8,10 +8,17 @@ namespace ThornWriter.Web
     public class EtoWebViewManager : IWebViewManager
     {
         private WebView webView;
+        private bool hasLoaded;
 
         public EtoWebViewManager(WebView webView)
         {
             this.webView = webView;
+
+            // Add an event handler to watch for the document to complete loading
+            webView.DocumentLoaded += (sender, e) =>
+            {
+                hasLoaded = true;
+            };
         }
 
         private string _html;
@@ -19,6 +26,7 @@ namespace ThornWriter.Web
             get => _html;
             set
             {
+                hasLoaded = false;
                 _html = value;
                 webView.LoadHtml(_html);
             }
@@ -45,32 +53,18 @@ namespace ThornWriter.Web
         }
 
         /**
-         * I know its ugly and there's probably a better way,
-         * but it works for now.
+         * Execute a script on the page and return the string result, but only
+         * *after* the document has loaded.
          */
-        public async Task<string> RunScript(string js)
+        public string RunScript(string js)
         {
-            string result = await Task.Run(() => {
-                var stringResult = "";
-                var hasLoaded = false;
+            // Wait until the document has loaded
+            while (!hasLoaded)
+                Task.Delay(100).Wait();
 
-                EventHandler<WebViewLoadedEventArgs> onLoaded = null;
-                onLoaded = (object sender, WebViewLoadedEventArgs e) =>
-                {
-                    hasLoaded = true;
-                    stringResult = webView.ExecuteScript("return " + js);
-                    webView.DocumentLoaded -= onLoaded;
-                };
+            // Now run the script
+            return webView.ExecuteScript(js);
 
-                webView.DocumentLoaded += onLoaded;
-
-                while (!hasLoaded)
-                    Task.Delay(100).Wait();
-
-                return stringResult;
-            });
-
-            return result;
         }
 
     }

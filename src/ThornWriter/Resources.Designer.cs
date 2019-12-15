@@ -58,5 +58,11 @@ namespace ThornWriter {
                 return ResourceManager.GetString("DocumentBase", resourceCulture);
             }
         }
+        
+        internal static string TextEditor {
+            get {
+                return ResourceManager.GetString("TextEditor", resourceCulture);
+            }
+        }
     }
 }

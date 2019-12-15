@@ -13,6 +13,8 @@ namespace ThornWriter
         Notebook Document = new Notebook();
         TreeGridItemCollection PageSelectorItems = new TreeGridItemCollection();
         IWebViewManager PreviewManager;
+        IWebViewManager EditManager;
+        TextEditor DocumentEdit;
 
         public void LoadPages()
         {
@@ -59,17 +61,19 @@ namespace ThornWriter
         }
 
 
-        public async void OnChangeSelection(object sender, EventArgs e)
+        public void OnChangeSelection(object sender, EventArgs e)
         {
+            
             var pageIndex = PageSelector.SelectedRow;
             
             if (pageIndex != -1)
             {
                 var pageBody = Document.Pages[pageIndex].Content;
-                var pageContent = Resources.DocumentBase.Replace("{DocumentBody}", pageBody);
+                var pageContent = HtmlRenderer.Render(Resources.DocumentBase, "DocumentBody", pageBody);
                 PreviewManager.Content = pageContent;
-                var result = await PreviewManager.RunScript("sayHello('" + pageIndex + "');");
-                MessageBox.Show(result);
+                var script = string.Format("document.body.style.color = 'rgb({0},{0},{0})'", pageIndex);
+                var s = EditManager.RunScript(script);
+              
             }
         }
     }

@@ -14,6 +14,6 @@ namespace Thorn.Web
         public void Refresh();
         public void GoBack();
         public void GoForward();
-        public Task<string> RunScript(string js);
+        public string RunScript(string js);
     }
 }
