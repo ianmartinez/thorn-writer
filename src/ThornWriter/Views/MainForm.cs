@@ -1,20 +1,19 @@
-using System;
 using Eto.Forms;
 using Eto.Drawing;
 using Thorn.NotebookFile;
-using System.Reflection;
-using System.Collections.Generic;
 using ThornWriter.Web;
 
 namespace ThornWriter
 {
 	public partial class MainForm : Form
     {
+        #region "Control Declarations"
         WebView DocumentPreview = new WebView();
         WebView DocumentEditor = new WebView();
         TreeGridView PageSelector = new TreeGridView();
         Splitter MainSplitter = new Splitter();
         Splitter DocumentSplitter = new Splitter();
+        #endregion
 
         public MainForm()
 		{

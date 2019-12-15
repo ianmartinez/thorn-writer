@@ -73,7 +73,7 @@ namespace ThornWriter
                 PreviewManager.Content = pageContent;
                 var script = string.Format("document.body.style.color = 'rgb({0},{0},{0})'", pageIndex);
                 var s = EditManager.RunScript(script);
-              
+                DocumentEdit.Theme = TextEditorTheme.Light;
             }
         }
     }
