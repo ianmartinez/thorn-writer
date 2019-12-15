@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+
 namespace Thorn.Web
 {
     /**
@@ -12,6 +14,6 @@ namespace Thorn.Web
         public void Refresh();
         public void GoBack();
         public void GoForward();
-        public string ExecuteJs(string js);
+        public Task<string> RunScript(string js);
     }
 }
