@@ -7,6 +7,7 @@ namespace ThornWriter.Web
         {
             return html.Replace("{" + name + "}", value);
         }
+
         public static string RenderTag(string html, string tag, string name, string value)
         {
             return Render(html, name, string.Format("<{0}>{1}</{0}>", tag, value));

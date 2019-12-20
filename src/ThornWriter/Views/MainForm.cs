@@ -43,6 +43,7 @@ namespace ThornWriter
                     Content = "<b>Hello World</b> #" + i
                 });
             }
+
             LoadPages();
 
             // Document Splitter
@@ -61,11 +62,17 @@ namespace ThornWriter
 
             Content = MainSplitter;
 
-            // create a few commands that can be used for the menu and toolbar
-            var clickMe = new Command { MenuText = "Click Me!", ToolBarText = "Click Me!" };
-			clickMe.Executed += (sender, e) => MessageBox.Show(this, "I was clicked!");
+            // Commands
+            var newNotebookCommand = new Command { MenuText = "New", ToolBarText = "New" };
+			newNotebookCommand.Executed += OnNewNotebook;
 
-			var quitCommand = new Command { MenuText = "Quit", Shortcut = Application.Instance.CommonModifier | Keys.Q };
+            var openNotebookCommand = new Command { MenuText = "Open...", ToolBarText = "Open" };
+            openNotebookCommand.Executed += OnOpenNotebook;
+
+            var saveNotebookCommand = new Command { MenuText = "Save...", ToolBarText = "Save" };
+            saveNotebookCommand.Executed += OnSaveNotebook;
+
+            var quitCommand = new Command { MenuText = "Quit", Shortcut = Application.Instance.CommonModifier | Keys.Q };
 			quitCommand.Executed += OnQuit;
 
 			var aboutCommand = new Command { MenuText = "About..." };
@@ -76,22 +83,26 @@ namespace ThornWriter
 			{
 				Items =
 				{
-					// File submenu
-					new ButtonMenuItem { Text = "&File", Items = { clickMe } },
-					new ButtonMenuItem { Text = "&Edit", Items = { /* commands/items */ } },
-					//new ButtonMenuItem { Text = "&View", Items = { /* commands/items */ } },
+					new ButtonMenuItem {Text = "&File", Items = {
+                        newNotebookCommand, openNotebookCommand,
+                        saveNotebookCommand
+                    }},
+					new ButtonMenuItem { Text = "&Edit", Items = { /* commands/items */ } }
 				},
 				ApplicationItems =
 				{
-					// application (OS X) or file menu (others)
 					new ButtonMenuItem { Text = "&Preferences..." },
 				},
 				QuitItem = quitCommand,
 				AboutItem = aboutCommand
-			};
+		    };
 
-			// create toolbar			
-			ToolBar = new ToolBar { Items = { clickMe } };
+		    // create toolbar			
+		    ToolBar = new ToolBar {Items = {
+                        newNotebookCommand, openNotebookCommand,
+                        saveNotebookCommand
+                    }
+            };
 		}
 	}
 }

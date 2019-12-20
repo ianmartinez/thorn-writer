@@ -44,6 +44,21 @@ namespace ThornWriter
          * Event handlers
          */
 
+        public void OnNewNotebook(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnOpenNotebook(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnSaveNotebook(object sender, EventArgs e)
+        {
+
+        }
+
         public void OnQuit(object sender, EventArgs e)
         {
             Application.Instance.Quit();
@@ -73,7 +88,8 @@ namespace ThornWriter
                 PreviewManager.Content = pageContent;
                 var script = string.Format("document.body.style.color = 'rgb({0},{0},{0})'", pageIndex);
                 var s = EditManager.RunScript(script);
-                DocumentEdit.Theme = TextEditorTheme.Light;
+                DocumentEdit.Theme = TextEditTheme.Light;
+                DocumentEdit.Content = pageContent;
             }
         }
     }

@@ -1,33 +1,17 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Web/TextEditor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Web/TextEdit.cs">
     <Files>
-      <File FileName="../../../../../../usr/local/share/dotnet/sdk/3.0.101/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FrameworkReferenceResolution.targets" Line="324" Column="6" />
-      <File FileName="../../../../../../usr/local/share/dotnet/sdk/3.1.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FrameworkReferenceResolution.targets" />
-      <File FileName="Thorn/Class1.cs" />
-      <File FileName="Thorn/NotebookFile/Dictionary.cs" />
-      <File FileName="Thorn/NotebookFile/KeyValue.cs" />
-      <File FileName="Thorn/NotebookFile/Notebook.cs" />
-      <File FileName="Thorn/NotebookFile/TempFolder.cs" />
-      <File FileName="Thorn/NotebookFile/Page.cs" />
-      <File FileName="Thorn/Web/IWebViewManager.cs" />
-      <File FileName="ThornWriter.XamMac/Program.cs" />
-      <File FileName="ThornWriter.Desktop/Info.plist" />
-      <File FileName="ThornWriter.Desktop/Program.cs" />
-      <File FileName="ThornWriter/Controllers/MainForm.cs" />
-      <File FileName="ThornWriter.XamMac/Info.plist" />
-      <File FileName="ThornWriter/Resources.resx" />
-      <File FileName="ThornWriter/Resources.Designer.cs" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Convert.cs" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.Linq/src/System/Linq/ElementAt.cs" />
-      <File FileName="ThornWriter/Resources/License.txt" />
-      <File FileName="ThornWriter/Resources/DocumentBase.html" />
-      <File FileName="ThornWriter/Web/EtoWebViewManager.cs" />
-      <File FileName="ThornWriter/Resources/TextEditor.html" />
-      <File FileName="ThornWriter/Views/MainForm.cs" Line="25" Column="37" />
-      <File FileName="ThornWriter/Web/TextEditor.cs" Line="7" Column="26" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/corlib/System.Threading/Monitor.cs" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Collections/Generic/Dictionary.cs" />
+      <File FileName="ThornWriter/Resources/TextEdit.js" Line="15" Column="26" />
+      <File FileName="ThornWriter/Resources/TextEdit.html" Line="1" Column="1" />
+      <File FileName="ThornWriter/Resources.resx" Line="134" Column="30" />
+      <File FileName="ThornWriter/Web/TextEdit.cs" Line="57" Column="1" />
+      <File FileName="ThornWriter/Controllers/MainForm.cs" Line="92" Column="61" />
+      <File FileName="ThornWriter/Views/MainForm.cs" Line="1" Column="1" />
+      <File FileName="ThornWriter/Web/HtmlRenderer.cs" Line="14" Column="10" />
+      <File FileName="ThornWriter/Resources/TextEdit.css" Line="1" Column="1" />
+      <File FileName="ThornWriter/Resources/DocumentBase.html" Line="1" Column="1" />
+      <File FileName="ThornWriter/Web/EtoWebViewManager.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -42,12 +26,15 @@
             </Node>
             <Node name="ThornWriter" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Resources" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="Editor" expanded="True">
+                  <Node name="mode" expanded="True" />
+                </Node>
+              </Node>
               <Node name="Views" expanded="True" />
               <Node name="Web" expanded="True">
-                <Node name="TextEditor.cs" selected="True" />
+                <Node name="TextEdit.cs" selected="True" />
               </Node>
-              <Node name="Resources.resx" expanded="True" />
             </Node>
             <Node name="ThornWriter.Desktop" expanded="True" />
             <Node name="ThornWriter.XamMac" expanded="True" />
@@ -63,7 +50,9 @@
     <String>/Users/ianmartinez/Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98</String>
   </Debugger.DebugSourceFolders>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/Web/TextEdit.cs" relfile="ThornWriter/Web/TextEdit.cs" line="54" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

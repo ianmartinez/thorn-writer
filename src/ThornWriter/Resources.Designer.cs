@@ -59,9 +59,57 @@ namespace ThornWriter {
             }
         }
         
-        internal static string TextEditor {
+        internal static string TextEdit {
             get {
-                return ResourceManager.GetString("TextEditor", resourceCulture);
+                return ResourceManager.GetString("TextEdit", resourceCulture);
+            }
+        }
+        
+        internal static string TextEditStyle {
+            get {
+                return ResourceManager.GetString("TextEditStyle", resourceCulture);
+            }
+        }
+        
+        internal static string TextEditScript {
+            get {
+                return ResourceManager.GetString("TextEditScript", resourceCulture);
+            }
+        }
+        
+        internal static string CodeMirrorStyle {
+            get {
+                return ResourceManager.GetString("CodeMirrorStyle", resourceCulture);
+            }
+        }
+        
+        internal static string CodeMirrorScript {
+            get {
+                return ResourceManager.GetString("CodeMirrorScript", resourceCulture);
+            }
+        }
+        
+        internal static string CodeMirrorModeCss {
+            get {
+                return ResourceManager.GetString("CodeMirrorModeCss", resourceCulture);
+            }
+        }
+        
+        internal static string CodeMirrorModeHtmlMixed {
+            get {
+                return ResourceManager.GetString("CodeMirrorModeHtmlMixed", resourceCulture);
+            }
+        }
+        
+        internal static string CodeMirrorModeJs {
+            get {
+                return ResourceManager.GetString("CodeMirrorModeJs", resourceCulture);
+            }
+        }
+        
+        internal static string CodeMirrorModeXml {
+            get {
+                return ResourceManager.GetString("CodeMirrorModeXml", resourceCulture);
             }
         }
     }
