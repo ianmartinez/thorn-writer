@@ -3,6 +3,7 @@ using Eto.Forms;
 using Eto.Drawing;
 using Thorn.NotebookFile;
 using ThornWriter.Web;
+using System.Collections.Generic;
 
 namespace ThornWriter
 {
@@ -36,9 +37,12 @@ namespace ThornWriter
 
         }
 
-        /**
+        /**ß
          * Event handlers
          */
+        FileFilter[] filters = {
+            new FileFilter("Thorn Writer Notebook (*.thw)", ".thw")
+        };
 
         public void OnNewNotebook(object sender, EventArgs e)
         {
@@ -47,7 +51,15 @@ namespace ThornWriter
 
         public void OnOpenNotebook(object sender, EventArgs e)
         {
+            var openDialog = new OpenFileDialog();
+            foreach (var filter in filters)
+                openDialog.Filters.Add(filter);
 
+            if (openDialog.ShowDialog(this) == DialogResult.Ok)
+            {
+                Document.Open(openDialog.FileName);
+                LoadPages();
+            }
         }
 
         public void OnSaveNotebook(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using static Thorn.NotebookFile.KeyValue;
@@ -7,7 +8,7 @@ namespace Thorn.NotebookFile
 {
     public class Notebook
     {
-        public const double CurrentSpec = 4.1;
+        public const double CurrentSpec = 3.1;
 
         public double SpecVersion { get; set; } = CurrentSpec;
 
@@ -22,6 +23,9 @@ namespace Thorn.NotebookFile
         public List<string> Characters { get; set; } = new List<string>();
         public List<Page> Pages { get; set; } = new List<Page>();
         public Dictionary NotebookDictionary { get; set; } = new Dictionary();
+
+        public bool Modified { get; set; } = false;
+        public string FilePath { get; set; } = "";
 
         public void Save(string filePath)
         {
@@ -58,6 +62,62 @@ namespace Thorn.NotebookFile
             File.WriteAllText(temp.DictionaryFile, NotebookDictionary.Save());
 
             ZipFile.CreateFromDirectory(temp.RootFolder, filePath, CompressionLevel.Optimal, false);
+
+            // Delete temp folder now that it is no longer needed
+            Directory.Delete(temp.RootFolder, true);
+        }
+
+        public void Open(string filePath)
+        {
+            var temp = new TempFolder();
+            ZipFile.ExtractToDirectory(filePath, temp.RootFolder);
+
+            // Read data file
+            var dataFile = Read(File.ReadAllText(temp.DataFile));
+            Title = Search(dataFile, "title");
+            Language = Search(dataFile, "language");
+            Author = Search(dataFile, "author");
+            Website = Search(dataFile, "website");
+
+            if(double.TryParse(Search(dataFile, "specVersion"), out double specVersion))
+                SpecVersion = specVersion;
+
+            // Clear out the old pages
+            Pages.Clear();
+
+            // Read the new pages
+            var pagesFile = Read(File.ReadAllText(temp.PagesFile));
+            var pageFiles = new List<string>(Directory.EnumerateFiles(temp.PagesFolder));
+            for(var i=0; i<pageFiles.Count; i++)
+            {
+                var pageTitle = Search(pagesFile, i + ".title");
+                var pageFilePath = temp.GetPagePath(i);
+                if (File.Exists(pageFilePath))
+                {
+                    Pages.Add(new Page() {
+                        Title = pageTitle,
+                        Content = File.ReadAllText(pageFilePath)
+                    });
+                }
+            }
+
+            // Read stylesheet file
+            Stylesheet = (File.Exists(temp.StylesheetFile)) ?
+                            File.ReadAllText(temp.StylesheetFile) : "";
+
+            // Read dictionary
+            // TODO
+
+            // Read custom characters
+            Characters.Clear();
+            var charactersFile = File.ReadAllText(temp.CharactersFile);
+            var characters = charactersFile.Split(new string[] {
+                Environment.NewLine, "\r\n", "\r", "\n"
+            }, StringSplitOptions.RemoveEmptyEntries);
+            Characters.AddRange(characters);
+
+            // Delete temp folder now that it is no longer needed
+            Directory.Delete(temp.RootFolder, true);
         }
     }
 }
