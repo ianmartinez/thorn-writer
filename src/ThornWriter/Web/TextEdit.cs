@@ -19,6 +19,7 @@ namespace ThornWriter.Web
     {
         private readonly IWebViewManager ViewManager;
         private readonly IWebViewManager PreviewViewManager;
+        private UITimer PreviewTimer;
 
         public TextEditor(IWebViewManager viewManager, IWebViewManager previewViewManager = null)
         {
@@ -121,9 +122,9 @@ namespace ThornWriter.Web
         private void LoadPreview()
         {
             // Refresh the preview every .5 seconds
-            var timer = new UITimer { Interval = 0.5 };
-            timer.Elapsed += (sender, e) => RefreshPreview();
-            timer.Start();
+            PreviewTimer = new UITimer { Interval = 0.5 };
+            PreviewTimer.Elapsed += (sender, e) => RefreshPreview();
+            PreviewTimer.Start();
         }
     }
 }
