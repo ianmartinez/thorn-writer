@@ -2,8 +2,6 @@
 using Eto.Forms;
 using Eto.Drawing;
 using Thorn.NotebookFile;
-using System.Reflection;
-using Thorn.Web;
 using ThornWriter.Web;
 
 namespace ThornWriter
@@ -12,8 +10,6 @@ namespace ThornWriter
     {
         Notebook Document = new Notebook();
         TreeGridItemCollection PageSelectorItems = new TreeGridItemCollection();
-        IWebViewManager PreviewManager;
-        IWebViewManager EditManager;
         TextEditor DocumentEdit;
 
         public void LoadPages()
@@ -75,22 +71,12 @@ namespace ThornWriter
             aboutDialog.ShowDialog(this);
         }
 
-
         public void OnChangeSelection(object sender, EventArgs e)
         {
-            
             var pageIndex = PageSelector.SelectedRow;
-            
+
             if (pageIndex != -1)
-            {
-                var pageBody = Document.Pages[pageIndex].Content;
-                var pageContent = HtmlRenderer.Render(Resources.DocumentBase, "DocumentBody", pageBody);
-                PreviewManager.Content = pageContent;
-                var script = string.Format("document.body.style.color = 'rgb({0},{0},{0})'", pageIndex);
-                var s = EditManager.RunScript(script);
-                DocumentEdit.Theme = TextEditTheme.Light;
-                DocumentEdit.Content = pageContent;
-            }
+                DocumentEdit.Content = Document.Pages[pageIndex].Content;
         }
     }
 }

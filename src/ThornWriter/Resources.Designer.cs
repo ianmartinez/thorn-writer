@@ -59,6 +59,12 @@ namespace ThornWriter {
             }
         }
         
+        internal static string DocumentStyle {
+            get {
+                return ResourceManager.GetString("DocumentStyle", resourceCulture);
+            }
+        }
+        
         internal static string TextEdit {
             get {
                 return ResourceManager.GetString("TextEdit", resourceCulture);

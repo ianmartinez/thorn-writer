@@ -2,10 +2,11 @@ using Eto.Forms;
 using Eto.Drawing;
 using Thorn.NotebookFile;
 using ThornWriter.Web;
+using Thorn.Web;
 
 namespace ThornWriter
 {
-	public partial class MainForm : Form
+    public partial class MainForm : Form
     {
         #region "Control Declarations"
         WebView DocumentPreview = new WebView();
@@ -15,17 +16,24 @@ namespace ThornWriter
         Splitter DocumentSplitter = new Splitter();
         #endregion
 
+        IWebViewManager PreviewManager;
+        IWebViewManager EditManager;
         public MainForm()
-		{
+        {
             Title = "Thorn Writer " + AppInfo.GetFormattedVersion();
-			ClientSize = new Size(700, 500);
+            ClientSize = new Size(700, 500);
             // Set managers
             PreviewManager = new EtoWebViewManager(DocumentPreview);
             EditManager = new EtoWebViewManager(DocumentEditor);
-            DocumentEdit = new TextEditor(EditManager);
+            DocumentEdit = new TextEditor(EditManager, PreviewManager);
+
+            var documentBase = Resources.DocumentBase;
+            documentBase = HtmlRenderer.RenderStyle(documentBase, "DocumentStyle", Resources.DocumentStyle);
+            DocumentEdit.PreviewBase = documentBase;
 
             // Page Selector
-            PageSelector.Columns.Add(new GridColumn() {
+            PageSelector.Columns.Add(new GridColumn()
+            {
                 DataCell = new ImageTextCell(0, 1),
                 AutoSize = true,
                 Resizable = false,
@@ -64,7 +72,7 @@ namespace ThornWriter
 
             // Commands
             var newNotebookCommand = new Command { MenuText = "New", ToolBarText = "New" };
-			newNotebookCommand.Executed += OnNewNotebook;
+            newNotebookCommand.Executed += OnNewNotebook;
 
             var openNotebookCommand = new Command { MenuText = "Open...", ToolBarText = "Open" };
             openNotebookCommand.Executed += OnOpenNotebook;
@@ -73,36 +81,38 @@ namespace ThornWriter
             saveNotebookCommand.Executed += OnSaveNotebook;
 
             var quitCommand = new Command { MenuText = "Quit", Shortcut = Application.Instance.CommonModifier | Keys.Q };
-			quitCommand.Executed += OnQuit;
+            quitCommand.Executed += OnQuit;
 
-			var aboutCommand = new Command { MenuText = "About..." };
-			aboutCommand.Executed += OnAbout;
+            var aboutCommand = new Command { MenuText = "About..." };
+            aboutCommand.Executed += OnAbout;
 
-			// create menu
-			Menu = new MenuBar
-			{
-				Items =
-				{
-					new ButtonMenuItem {Text = "&File", Items = {
+            // create menu
+            Menu = new MenuBar
+            {
+                Items =
+                {
+                    new ButtonMenuItem {Text = "&File", Items = {
                         newNotebookCommand, openNotebookCommand,
                         saveNotebookCommand
                     }},
-					new ButtonMenuItem { Text = "&Edit", Items = { /* commands/items */ } }
-				},
-				ApplicationItems =
-				{
-					new ButtonMenuItem { Text = "&Preferences..." },
-				},
-				QuitItem = quitCommand,
-				AboutItem = aboutCommand
-		    };
+                    new ButtonMenuItem { Text = "&Edit", Items = { /* commands/items */ } }
+                },
+                ApplicationItems =
+                {
+                    new ButtonMenuItem { Text = "&Preferences..." },
+                },
+                QuitItem = quitCommand,
+                AboutItem = aboutCommand
+            };
 
-		    // create toolbar			
-		    ToolBar = new ToolBar {Items = {
+            // create toolbar			
+            ToolBar = new ToolBar
+            {
+                Items = {
                         newNotebookCommand, openNotebookCommand,
                         saveNotebookCommand
                     }
             };
-		}
-	}
+        }
+    }
 }
