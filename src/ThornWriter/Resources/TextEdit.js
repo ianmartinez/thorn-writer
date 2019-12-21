@@ -1,15 +1,22 @@
 ﻿function loadEditor(teaxAreaId) {
     var textArea = document.getElementById(teaxAreaId);
 
-    return CodeMirror.fromTextArea(textArea, {
-        mode: "htmlmixed"
+    var instance = CodeMirror.fromTextArea(textArea, {
+        mode: "htmlmixed",
+        theme: "ayu-mirage",
+        lineNumbers: true,
+        gutter: true
     });
+
+    instance.setSize("100%", "100%");
+
+    return instance;
 }
 
 var codeMirrorInstance = loadEditor("textEdit");
 
 function setEditorTheme(themeName) {
-  
+    
 }
 
 function setEditorContent(content) {

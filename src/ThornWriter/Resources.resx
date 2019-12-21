@@ -138,6 +138,9 @@
   </data>
   <data name="CodeMirrorStyle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\editor\codemirror.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>  
+  <data name="CodeMirrorThemeAyuMirage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\editor\theme\ayu-mirage.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="CodeMirrorScript" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\editor\codemirror.js;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

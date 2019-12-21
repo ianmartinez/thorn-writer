@@ -89,6 +89,12 @@ namespace ThornWriter {
             }
         }
         
+        internal static string CodeMirrorThemeAyuMirage {
+            get {
+                return ResourceManager.GetString("CodeMirrorThemeAyuMirage", resourceCulture);
+            }
+        }
+        
         internal static string CodeMirrorScript {
             get {
                 return ResourceManager.GetString("CodeMirrorScript", resourceCulture);
