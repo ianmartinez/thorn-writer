@@ -183,8 +183,6 @@ namespace ThornWriter
             {
                 Items = {
                         newNotebookCommand, openNotebookCommand, saveNotebookCommand,
-                        new SeparatorToolItem() { Type = SeparatorToolItemType.Space },
-                        undoCommand, redoCommand,
                         new SeparatorToolItem() { Type = SeparatorToolItemType.FlexibleSpace },
                         charactersCommand, dictionaryCommand
                     }

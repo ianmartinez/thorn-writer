@@ -16,14 +16,14 @@ namespace ThornWriter
         public void LoadPages()
         {
             PageSelectorItems.Clear();
-            var dummyIcon = new Bitmap(25, 25, PixelFormat.Format24bppRgb);
+            var pageIcon = Icon.FromResource("ThornWriter.Resources.Icons.text.png");
 
             foreach (Page page in Document.Pages)
             {
                 var notebookPagesTreeItem = new TreeGridItem()
                 {
                     Expanded = false,
-                    Values = new object[] { dummyIcon, page.Title },
+                    Values = new object[] { pageIcon, page.Title },
                 };
 
                 PageSelectorItems.Add(notebookPagesTreeItem);
