@@ -70,23 +70,89 @@ namespace ThornWriter
 
             Content = MainSplitter;
 
-            // Commands
-            var newNotebookCommand = new Command { MenuText = "New", ToolBarText = "New" };
+            // Commands - File
+            var newNotebookCommand = new Command {
+                MenuText = "New Notebook",
+                ToolBarText = "New",
+                Image = Icon.FromResource("ThornWriter.Resources.Icons.document-new.png")
+            };
             newNotebookCommand.Executed += OnNewNotebook;
 
-            var openNotebookCommand = new Command { MenuText = "Open...", ToolBarText = "Open" };
+            var openNotebookCommand = new Command {
+                MenuText = "Open...",
+                ToolBarText = "Open",
+                Image = Icon.FromResource("ThornWriter.Resources.Icons.folder-open.png")
+            };
             openNotebookCommand.Executed += OnOpenNotebook;
 
-            var saveNotebookCommand = new Command { MenuText = "Save...", ToolBarText = "Save" };
+            var saveNotebookCommand = new Command {
+                MenuText = "Save...",
+                ToolBarText = "Save",
+                Image = Icon.FromResource("ThornWriter.Resources.Icons.text-x-install.png")
+            };
             saveNotebookCommand.Executed += OnSaveNotebook;
 
-            var quitCommand = new Command { MenuText = "Quit", Shortcut = Application.Instance.CommonModifier | Keys.Q };
+            // Commands - Application
+            var quitCommand = new Command {
+                MenuText = "Quit",
+                Shortcut = Application.Instance.CommonModifier | Keys.Q
+            };
             quitCommand.Executed += OnQuit;
 
-            var aboutCommand = new Command { MenuText = "About..." };
+            var aboutCommand = new Command {
+                MenuText = "About..."
+            };
             aboutCommand.Executed += OnAbout;
+            
+            // Commands - Edit
+            var undoCommand = new Command {
+                MenuText = "Undo",
+                ToolBarText = "Undo",
+                Image = Icon.FromResource("ThornWriter.Resources.Icons.edit-undo.png")
+            };
+            undoCommand.Executed += OnUndo;
 
-            // create menu
+            var redoCommand = new Command {
+                MenuText = "Redo",
+                ToolBarText = "Redo",
+                Image = Icon.FromResource("ThornWriter.Resources.Icons.edit-redo.png")
+            };
+            redoCommand.Executed += OnRedo;
+
+            var cutCommand = new Command {
+                MenuText = "Cut",
+                ToolBarText = "Cut"
+            };
+            cutCommand.Executed += OnCut;
+
+            var copyCommand = new Command {
+                MenuText = "Copy",
+                ToolBarText = "Copy"
+            };
+            copyCommand.Executed += OnCopy;
+
+            var pasteCommand = new Command {
+                MenuText = "Paste",
+                ToolBarText = "Paste"
+            };
+            pasteCommand.Executed += OnPaste;
+
+            // Language
+            var charactersCommand = new Command {
+                MenuText = "Characters...",
+                ToolBarText = "Characters",
+                Image = Icon.FromResource("ThornWriter.Resources.Icons.preferences-desktop-locale.png")                
+            };
+            charactersCommand.Executed += OnCharacters;
+
+            var dictionaryCommand = new Command {
+                MenuText = "Dictionary...",
+                ToolBarText = "Dictionary",
+                Image = Icon.FromResource("ThornWriter.Resources.Icons.dictionary.png")
+            };
+            dictionaryCommand.Executed += OnCharacters;
+
+            // Menu
             Menu = new MenuBar
             {
                 Items =
@@ -95,7 +161,14 @@ namespace ThornWriter
                         newNotebookCommand, openNotebookCommand,
                         saveNotebookCommand
                     }},
-                    new ButtonMenuItem { Text = "&Edit", Items = { /* commands/items */ } }
+                    new ButtonMenuItem { Text = "&Edit", Items = {
+                        undoCommand, redoCommand,
+                        new SeparatorMenuItem(),
+                        cutCommand, copyCommand, pasteCommand
+                    }},
+                    new ButtonMenuItem { Text = "&Language", Items = {
+                        charactersCommand, dictionaryCommand
+                    }}
                 },
                 ApplicationItems =
                 {
@@ -105,12 +178,15 @@ namespace ThornWriter
                 AboutItem = aboutCommand
             };
 
-            // create toolbar			
+            // Toolbar		
             ToolBar = new ToolBar
             {
                 Items = {
-                        newNotebookCommand, openNotebookCommand,
-                        saveNotebookCommand
+                        newNotebookCommand, openNotebookCommand, saveNotebookCommand,
+                        new SeparatorToolItem() { Type = SeparatorToolItemType.Space },
+                        undoCommand, redoCommand,
+                        new SeparatorToolItem() { Type = SeparatorToolItemType.FlexibleSpace },
+                        charactersCommand, dictionaryCommand
                     }
             };
         }

@@ -37,9 +37,11 @@ namespace ThornWriter
 
         }
 
-        /**ß
+        /**
          * Event handlers
          */
+
+        // File Menu
         FileFilter[] filters = {
             new FileFilter("Thorn Writer Notebook (*.thw)", ".thw")
         };
@@ -48,12 +50,15 @@ namespace ThornWriter
         {
 
         }
-
+        
         public void OnOpenNotebook(object sender, EventArgs e)
         {
             var openDialog = new OpenFileDialog();
+
             foreach (var filter in filters)
                 openDialog.Filters.Add(filter);
+
+            openDialog.CurrentFilterIndex = 0;
 
             if (openDialog.ShowDialog(this) == DialogResult.Ok)
             {
@@ -67,6 +72,39 @@ namespace ThornWriter
 
         }
 
+        // Edit Menu
+        public void OnUndo(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnRedo(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnCut(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnCopy(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnPaste(object sender, EventArgs e)
+        {
+
+        }
+
+        // Language Menu
+        public void OnCharacters(object sender, EventArgs e)
+        {
+
+        }
+
+        // Application Menu
         public void OnQuit(object sender, EventArgs e)
         {
             Application.Instance.Quit();

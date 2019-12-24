@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Resources/TextEdit.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Views/MainForm.cs">
     <Files>
-      <File FileName="ThornWriter/Resources/TextEdit.js" Line="12" Column="3" />
-      <File FileName="ThornWriter/Resources/TextEdit.html" Line="13" Column="21" />
-      <File FileName="ThornWriter/Resources.resx" Line="142" Column="39" />
+      <File FileName="ThornWriter/Resources/TextEdit.js" Line="13" Column="21" />
+      <File FileName="ThornWriter/Resources/TextEdit.html" />
+      <File FileName="ThornWriter/Resources.resx" />
       <File FileName="ThornWriter/Web/TextEdit.cs" />
       <File FileName="ThornWriter/Controllers/MainForm.cs" />
-      <File FileName="ThornWriter/Views/MainForm.cs" />
+      <File FileName="ThornWriter/Views/MainForm.cs" Line="77" Column="84" />
       <File FileName="ThornWriter/Web/HtmlRenderer.cs" />
       <File FileName="ThornWriter/Resources/TextEdit.css" />
       <File FileName="ThornWriter/Resources/DocumentBase.html" />
@@ -15,16 +15,19 @@
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Text/StringBuilder.cs" />
       <File FileName="ThornWriter/Resources/DocumentStyle.css" />
       <File FileName="ThornWriter.XamMac/Info.plist" />
-      <File FileName="Thorn/NotebookFile/Notebook.cs" Line="121" Column="1" />
+      <File FileName="Thorn/NotebookFile/Notebook.cs" />
       <File FileName="Thorn/NotebookFile/TempFolder.cs" />
-      <File FileName="Thorn/NotebookFile/Dictionary.cs" Line="20" Column="18" />
-      <File FileName="Thorn/NotebookFile/KeyValue.cs" Line="31" Column="127" />
+      <File FileName="Thorn/NotebookFile/Dictionary.cs" />
+      <File FileName="Thorn/NotebookFile/KeyValue.cs" />
       <File FileName="Thorn/NotebookFile/Page.cs" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.IO.FileSystem/src/System/IO/FileSystem.Unix.cs" Line="438" Column="1" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.IO.FileSystem/src/System/IO/Directory.cs" Line="292" Column="1" />
-      <File FileName="../../../../../../Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets" Line="2126" Column="5" />
-      <File FileName="ThornWriter/Resources/Editor/codemirror.js" Line="1" Column="1" />
-      <File FileName="ThornWriter/Resources/Editor/codemirror.css" Line="1" Column="1" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.IO.FileSystem/src/System/IO/FileSystem.Unix.cs" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.IO.FileSystem/src/System/IO/Directory.cs" />
+      <File FileName="../../../../../../Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets" />
+      <File FileName="ThornWriter/Resources/Editor/codemirror.js" />
+      <File FileName="ThornWriter/Resources/Editor/codemirror.css" />
+      <File FileName="ThornWriter.XamMac/Program.cs" />
+      <File FileName="ThornWriter/Resources/Icons/text-html.png" />
+      <File FileName="ThornWriter/Resources/Icons/document-new.png" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,9 +35,7 @@
           <Node name="ThornWriter" expanded="True">
             <Node name="Thorn" expanded="True">
               <Node name="Dependencies" expanded="True">
-                <Node name="SdkDependencies" expanded="True">
-                  <Node name="NETStandard.Library" expanded="True" />
-                </Node>
+                <Node name="SdkDependencies" expanded="True" />
               </Node>
               <Node name="NotebookFile" expanded="True" />
               <Node name="Web" expanded="True" />
@@ -45,7 +46,7 @@
                 <Node name="Editor" expanded="True">
                   <Node name="theme" expanded="True" />
                 </Node>
-                <Node name="TextEdit.js" selected="True" />
+                <Node name="Icons" expanded="True" selected="True" />
               </Node>
               <Node name="Views" expanded="True" />
               <Node name="Web" expanded="True" />
@@ -63,10 +64,7 @@
     <String>/Users/ianmartinez/Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98</String>
   </Debugger.DebugSourceFolders>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/NotebookFile/Notebook.cs" relfile="Thorn/NotebookFile/Notebook.cs" line="121" column="1" />
-      <Breakpoint file="/Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/NotebookFile/Notebook.cs" relfile="Thorn/NotebookFile/Notebook.cs" line="112" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

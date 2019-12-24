@@ -29,6 +29,33 @@
     <Folder Include="Web\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\text-html.png" />
+    <EmbeddedResource Include="Resources\Icons\selection-top.png" />
+    <EmbeddedResource Include="Resources\Icons\selection-raise.png" />
+    <EmbeddedResource Include="Resources\Icons\selection-lower.png" />
+    <EmbeddedResource Include="Resources\Icons\selection-bottom.png" />
+    <EmbeddedResource Include="Resources\Icons\preferences-desktop-locale.png" />
+    <EmbeddedResource Include="Resources\Icons\open-menu.png" />
+    <EmbeddedResource Include="Resources\Icons\media-playback-start.png" />
+    <EmbeddedResource Include="Resources\Icons\list-remove.png" />
+    <EmbeddedResource Include="Resources\Icons\list-add.png" />
+    <EmbeddedResource Include="Resources\Icons\folder-open.png" />
+    <EmbeddedResource Include="Resources\Icons\extension.png" />
+    <EmbeddedResource Include="Resources\Icons\document-new.png" />
+    <EmbeddedResource Include="Resources\Icons\dictionary.png" />
+    <EmbeddedResource Include="Resources\Icons\image-x-generic.png" />
+    <EmbeddedResource Include="Resources\Icons\list-add-24.png" />
+    <EmbeddedResource Include="Resources\Icons\list-remove-24.png" />
+    <EmbeddedResource Include="Resources\Icons\preferences-system.png" />
+    <EmbeddedResource Include="Resources\Icons\preferences-system-privacy-housekeeping.png" />
+    <EmbeddedResource Include="Resources\Icons\text.png" />
+    <EmbeddedResource Include="Resources\Icons\text-css.png" />
+    <EmbeddedResource Include="Resources\Icons\text-x-install.png" />
+    <EmbeddedResource Include="Resources\Icons\video-x-generic.png" />
+    <EmbeddedResource Include="Resources\Icons\edit-undo.png" />
+    <EmbeddedResource Include="Resources\Icons\edit-redo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Update="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -38,5 +65,34 @@
     <Compile Update="Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Icons\text-html.png" />
+    <None Remove="Resources\Icons\selection-top.png" />
+    <None Remove="Resources\Icons\selection-raise.png" />
+    <None Remove="Resources\Icons\selection-lower.png" />
+    <None Remove="Resources\Icons\selection-bottom.png" />
+    <None Remove="Resources\Icons\preferences-desktop-locale.png" />
+    <None Remove="Resources\Icons\open-menu.png" />
+    <None Remove="Resources\Icons\media-playback-start.png" />
+    <None Remove="Resources\Icons\list-remove.png" />
+    <None Remove="Resources\Icons\list-add.png" />
+    <None Remove="Resources\Icons\folder-open.png" />
+    <None Remove="Resources\Icons\extension.png" />
+    <None Remove="Resources\Icons\edit-redo.png" />
+    <None Remove="Resources\Icons\edit-cut.png" />
+    <None Remove="Resources\Icons\document-new.png" />
+    <None Remove="Resources\Icons\dictionary.png" />
+    <None Remove="Resources\Icons\image-x-generic.png" />
+    <None Remove="Resources\Icons\list-add-24.png" />
+    <None Remove="Resources\Icons\list-remove-24.png" />
+    <None Remove="Resources\Icons\preferences-system.png" />
+    <None Remove="Resources\Icons\preferences-system-privacy-housekeeping.png" />
+    <None Remove="Resources\Icons\text.png" />
+    <None Remove="Resources\Icons\text-css.png" />
+    <None Remove="Resources\Icons\text-x-install.png" />
+    <None Remove="Resources\Icons\video-x-generic.png" />
+    <None Remove="Resources\Icons\edit-undo.png" />
+    <None Remove="Resources\Icons\edit-redo.png" />
   </ItemGroup>
 </Project>
