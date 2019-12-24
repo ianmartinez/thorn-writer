@@ -74,21 +74,21 @@ namespace ThornWriter
             var newNotebookCommand = new Command {
                 MenuText = "New Notebook",
                 ToolBarText = "New",
-                Image = Icon.FromResource("ThornWriter.Resources.Icons.document-new.png")
+                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.document-new.png")
             };
             newNotebookCommand.Executed += OnNewNotebook;
 
             var openNotebookCommand = new Command {
                 MenuText = "Open...",
                 ToolBarText = "Open",
-                Image = Icon.FromResource("ThornWriter.Resources.Icons.folder-open.png")
+                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.document-open.png")
             };
             openNotebookCommand.Executed += OnOpenNotebook;
 
             var saveNotebookCommand = new Command {
                 MenuText = "Save...",
                 ToolBarText = "Save",
-                Image = Icon.FromResource("ThornWriter.Resources.Icons.text-x-install.png")
+                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.document-save.png")
             };
             saveNotebookCommand.Executed += OnSaveNotebook;
 
@@ -108,14 +108,14 @@ namespace ThornWriter
             var undoCommand = new Command {
                 MenuText = "Undo",
                 ToolBarText = "Undo",
-                Image = Icon.FromResource("ThornWriter.Resources.Icons.edit-undo.png")
+                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.edit-undo.png")
             };
             undoCommand.Executed += OnUndo;
 
             var redoCommand = new Command {
                 MenuText = "Redo",
                 ToolBarText = "Redo",
-                Image = Icon.FromResource("ThornWriter.Resources.Icons.edit-redo.png")
+                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.edit-redo.png")
             };
             redoCommand.Executed += OnRedo;
 
@@ -141,14 +141,14 @@ namespace ThornWriter
             var charactersCommand = new Command {
                 MenuText = "Characters...",
                 ToolBarText = "Characters",
-                Image = Icon.FromResource("ThornWriter.Resources.Icons.preferences-desktop-locale.png")                
+                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.characters.png")                
             };
             charactersCommand.Executed += OnCharacters;
 
             var dictionaryCommand = new Command {
                 MenuText = "Dictionary...",
                 ToolBarText = "Dictionary",
-                Image = Icon.FromResource("ThornWriter.Resources.Icons.dictionary.png")
+                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.dictionary.png")
             };
             dictionaryCommand.Executed += OnCharacters;
 

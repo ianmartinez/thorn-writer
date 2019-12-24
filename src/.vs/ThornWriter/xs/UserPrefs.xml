@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Views/MainForm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/ThornWriter.csproj">
     <Files>
       <File FileName="ThornWriter/Resources/TextEdit.js" Line="13" Column="21" />
       <File FileName="ThornWriter/Resources/TextEdit.html" />
       <File FileName="ThornWriter/Resources.resx" />
       <File FileName="ThornWriter/Web/TextEdit.cs" />
-      <File FileName="ThornWriter/Controllers/MainForm.cs" />
-      <File FileName="ThornWriter/Views/MainForm.cs" Line="77" Column="84" />
+      <File FileName="ThornWriter/Controllers/MainForm.cs" Line="19" Column="79" />
+      <File FileName="ThornWriter/Views/MainForm.cs" Line="184" Column="19" />
       <File FileName="ThornWriter/Web/HtmlRenderer.cs" />
       <File FileName="ThornWriter/Resources/TextEdit.css" />
       <File FileName="ThornWriter/Resources/DocumentBase.html" />
@@ -15,10 +15,10 @@
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Text/StringBuilder.cs" />
       <File FileName="ThornWriter/Resources/DocumentStyle.css" />
       <File FileName="ThornWriter.XamMac/Info.plist" />
-      <File FileName="Thorn/NotebookFile/Notebook.cs" />
+      <File FileName="Thorn/NotebookFile/Notebook.cs" Line="77" Column="1" />
       <File FileName="Thorn/NotebookFile/TempFolder.cs" />
       <File FileName="Thorn/NotebookFile/Dictionary.cs" />
-      <File FileName="Thorn/NotebookFile/KeyValue.cs" />
+      <File FileName="Thorn/NotebookFile/KeyValue.cs" Line="71" Column="1" />
       <File FileName="Thorn/NotebookFile/Page.cs" />
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.IO.FileSystem/src/System/IO/FileSystem.Unix.cs" />
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.IO.FileSystem/src/System/IO/Directory.cs" />
@@ -26,12 +26,13 @@
       <File FileName="ThornWriter/Resources/Editor/codemirror.js" />
       <File FileName="ThornWriter/Resources/Editor/codemirror.css" />
       <File FileName="ThornWriter.XamMac/Program.cs" />
-      <File FileName="ThornWriter/Resources/Icons/text-html.png" />
-      <File FileName="ThornWriter/Resources/Icons/document-new.png" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs" Line="189" Column="1" />
+      <File FileName="ThornWriter/ThornWriter.csproj" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="ThornWriter" expanded="True">
             <Node name="Thorn" expanded="True">
               <Node name="Dependencies" expanded="True">
@@ -46,10 +47,15 @@
                 <Node name="Editor" expanded="True">
                   <Node name="theme" expanded="True" />
                 </Node>
-                <Node name="Icons" expanded="True" selected="True" />
+                <Node name="icons" expanded="True">
+                  <Node name="raster" expanded="True">
+                    <Node name="retina" expanded="True" />
+                  </Node>
+                </Node>
               </Node>
               <Node name="Views" expanded="True" />
               <Node name="Web" expanded="True" />
+              <Node name="ThornWriter.csproj" selected="True" />
             </Node>
             <Node name="ThornWriter.XamMac" expanded="True" />
           </Node>

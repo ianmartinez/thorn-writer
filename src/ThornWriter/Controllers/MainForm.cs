@@ -16,7 +16,7 @@ namespace ThornWriter
         public void LoadPages()
         {
             PageSelectorItems.Clear();
-            var pageIcon = Icon.FromResource("ThornWriter.Resources.Icons.text.png");
+            var pageIcon = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.text.png");
 
             foreach (Page page in Document.Pages)
             {
