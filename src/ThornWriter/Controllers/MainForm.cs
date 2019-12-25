@@ -1,9 +1,7 @@
 ﻿using System;
 using Eto.Forms;
-using Eto.Drawing;
 using Thorn.NotebookFile;
 using ThornWriter.Web;
-using System.Collections.Generic;
 
 namespace ThornWriter
 {
@@ -16,7 +14,7 @@ namespace ThornWriter
         public void LoadPages()
         {
             PageSelectorItems.Clear();
-            var pageIcon = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.text.png");
+            var pageIcon = Icons.Get("text");
 
             foreach (Page page in Document.Pages)
             {

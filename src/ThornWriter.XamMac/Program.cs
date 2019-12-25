@@ -1,5 +1,7 @@
-﻿using AppKit;
+﻿using System;
+using AppKit;
 using Eto.Forms;
+using Eto.Mac.Forms.Controls;
 
 namespace ThornWriter.XamMac
 {
@@ -7,7 +9,7 @@ namespace ThornWriter.XamMac
 	{
 		static void Main(string[] args)
 		{
-			new Application(Eto.Platforms.XamMac2).Run(new MainForm());
+            new Application(Eto.Platforms.XamMac2).Run(new MainForm());
 		}
 	}
 }

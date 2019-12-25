@@ -74,21 +74,21 @@ namespace ThornWriter
             var newNotebookCommand = new Command {
                 MenuText = "New Notebook",
                 ToolBarText = "New",
-                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.document-new.png")
+                Image = Icons.Get("document-new")
             };
             newNotebookCommand.Executed += OnNewNotebook;
 
             var openNotebookCommand = new Command {
                 MenuText = "Open...",
                 ToolBarText = "Open",
-                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.document-open.png")
+                Image = Icons.Get("document-open")
             };
             openNotebookCommand.Executed += OnOpenNotebook;
 
             var saveNotebookCommand = new Command {
                 MenuText = "Save...",
                 ToolBarText = "Save",
-                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.document-save.png")
+                Image = Icons.Get("document-save")
             };
             saveNotebookCommand.Executed += OnSaveNotebook;
 
@@ -108,32 +108,35 @@ namespace ThornWriter
             var undoCommand = new Command {
                 MenuText = "Undo",
                 ToolBarText = "Undo",
-                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.edit-undo.png")
+                Image = Icons.Get("edit-undo")
             };
             undoCommand.Executed += OnUndo;
 
             var redoCommand = new Command {
                 MenuText = "Redo",
                 ToolBarText = "Redo",
-                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.edit-redo.png")
+                Image = Icons.Get("edit-redo")
             };
             redoCommand.Executed += OnRedo;
 
             var cutCommand = new Command {
                 MenuText = "Cut",
-                ToolBarText = "Cut"
+                ToolBarText = "Cut",
+                Image = Icons.Get("edit-cut")
             };
             cutCommand.Executed += OnCut;
 
             var copyCommand = new Command {
                 MenuText = "Copy",
-                ToolBarText = "Copy"
+                ToolBarText = "Copy",
+                Image = Icons.Get("edit-copy")
             };
             copyCommand.Executed += OnCopy;
 
             var pasteCommand = new Command {
                 MenuText = "Paste",
-                ToolBarText = "Paste"
+                ToolBarText = "Paste",
+                Image = Icons.Get("edit-paste")
             };
             pasteCommand.Executed += OnPaste;
 
@@ -141,14 +144,14 @@ namespace ThornWriter
             var charactersCommand = new Command {
                 MenuText = "Characters...",
                 ToolBarText = "Characters",
-                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.characters.png")                
+                Image = Icons.Get("characters")            
             };
             charactersCommand.Executed += OnCharacters;
 
             var dictionaryCommand = new Command {
                 MenuText = "Dictionary...",
                 ToolBarText = "Dictionary",
-                Image = Icon.FromResource("ThornWriter.Resources.icons.raster.retina.dictionary.png")
+                Image = Icons.Get("dictionary")
             };
             dictionaryCommand.Executed += OnCharacters;
 
