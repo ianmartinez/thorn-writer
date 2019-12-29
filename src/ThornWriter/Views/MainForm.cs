@@ -43,8 +43,10 @@ namespace ThornWriter
                 Editable = true,
             });
             PageSelector.ShowHeader = false;
+            PageSelector.Columns[0].Width = 250;
             PageSelector.Border = BorderType.None;
             PageSelector.SelectionChanged += OnChangeSelection;
+            PageSelector.CellEdited += OnChangePageTitle;
 
             for (int i = 0; i < 100; i++)
             {

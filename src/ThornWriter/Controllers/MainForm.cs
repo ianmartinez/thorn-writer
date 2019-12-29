@@ -144,5 +144,23 @@ namespace ThornWriter
             if (pageIndex != -1)
                 Document.Pages[pageIndex].Content = PageEditor.Content;
         }
+
+        public void OnChangePageTitle(object sender, GridViewCellEventArgs e)
+        {
+            var pageIndex = PageSelector.SelectedRow;
+
+            if (pageIndex != -1)
+            {
+                var item = (TreeGridItem)e.Item;
+                /*
+                 * icon = item.Values[0]
+                 * text = item.Values[1]
+                 */
+                var newTitle = item.Values[1].ToString();
+
+                // Change page title
+                Document.Pages[pageIndex].Title = newTitle;
+            }
+        }
     }
 }
