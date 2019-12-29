@@ -1,4 +1,5 @@
-﻿using Eto.Forms;
+﻿using System;
+using Eto.Forms;
 using Thorn.Web;
 
 namespace ThornWriter.Web
@@ -20,6 +21,7 @@ namespace ThornWriter.Web
         private readonly IWebViewManager ViewManager;
         private readonly IWebViewManager PreviewViewManager;
         private UITimer PreviewTimer;
+        public event EventHandler<EventArgs> ContentChanged;
 
         public TextEditor(IWebViewManager viewManager, IWebViewManager previewViewManager = null)
         {
@@ -81,23 +83,31 @@ namespace ThornWriter.Web
         public void RefreshPreview()
         {
             var newPreview = Content;
-
-            if(PreviewViewManager != null && !lastPreview.Equals(newPreview))
+            // Check if the the content is different from the old content
+            if (!lastPreview.Equals(newPreview))
             {
-                /*
-                 * Store the preview content that is being set so that the
-                 * preview doesn't constantly refresh when it doesn't have
-                 * to
-                 */
-                lastPreview = newPreview;
+                // Trigger ContentChangedEvent
+                var eventArgs = new EventArgs();
+                ContentChanged(this, eventArgs);
 
-                if (!string.IsNullOrEmpty(PreviewBase))
+                // If there is a preview that needs updating
+                if (PreviewViewManager != null)
                 {
-                    PreviewViewManager.Content = PreviewBase.Replace("{Content}", newPreview);
-                }
-                else
-                {
-                    PreviewViewManager.Content = newPreview;
+                    /*
+                     * Store the preview content that is being set so that the
+                     * preview doesn't constantly refresh when it doesn't have
+                     * to
+                     */
+                    lastPreview = newPreview;
+
+                    if (!string.IsNullOrEmpty(PreviewBase))
+                    {
+                        PreviewViewManager.Content = PreviewBase.Replace("{Content}", newPreview);
+                    }
+                    else
+                    {
+                        PreviewViewManager.Content = newPreview;
+                    }
                 }
             }
         }
@@ -116,7 +126,7 @@ namespace ThornWriter.Web
             html = HtmlRenderer.RenderStyle(html, "TextEditStyle", Resources.TextEditStyle);
             html = HtmlRenderer.RenderScript(html, "TextEditScript", Resources.TextEditScript);
 
-            html = HtmlRenderer.RenderStyle(html, "CodeMirrorTheme", Resources.CodeMirrorThemeAyuMirage);
+            html = HtmlRenderer.RenderStyle(html, "CodeMirrorTheme", Resources.CodeMirrorThemeBase16Dark);
 
             ViewManager.Content = html;
         }

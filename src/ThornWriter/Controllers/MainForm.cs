@@ -9,7 +9,6 @@ namespace ThornWriter
     {
         Notebook Document = new Notebook();
         TreeGridItemCollection PageSelectorItems = new TreeGridItemCollection();
-        TextEditor DocumentEdit;
 
         public void LoadPages()
         {
@@ -67,7 +66,18 @@ namespace ThornWriter
 
         public void OnSaveNotebook(object sender, EventArgs e)
         {
+            var saveDialog = new SaveFileDialog();
 
+            foreach (var filter in filters)
+                saveDialog.Filters.Add(filter);
+
+            saveDialog.CurrentFilterIndex = 0;
+
+            if (saveDialog.ShowDialog(this) == DialogResult.Ok)
+            {
+                Document.Save(saveDialog.FileName);
+                Document.Modified = false;
+            }
         }
 
         // Edit Menu
@@ -124,7 +134,15 @@ namespace ThornWriter
             var pageIndex = PageSelector.SelectedRow;
 
             if (pageIndex != -1)
-                DocumentEdit.Content = Document.Pages[pageIndex].Content;
+                PageEditor.Content = Document.Pages[pageIndex].Content;
+        }
+
+        public void OnContentChanged(object sender, EventArgs e)
+        {
+            var pageIndex = PageSelector.SelectedRow;
+
+            if (pageIndex != -1)
+                Document.Pages[pageIndex].Content = PageEditor.Content;
         }
     }
 }

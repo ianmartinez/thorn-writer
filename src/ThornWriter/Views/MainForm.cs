@@ -12,12 +12,14 @@ namespace ThornWriter
         WebView DocumentPreview = new WebView();
         WebView DocumentEditor = new WebView();
         TreeGridView PageSelector = new TreeGridView();
+        Panel MainPanel = new Panel();
         Splitter MainSplitter = new Splitter();
         Splitter DocumentSplitter = new Splitter();
         #endregion
 
         IWebViewManager PreviewManager;
         IWebViewManager EditManager;
+        TextEditor PageEditor;
         public MainForm()
         {
             Title = "Thorn Writer " + AppInfo.GetFormattedVersion();
@@ -25,11 +27,12 @@ namespace ThornWriter
             // Set managers
             PreviewManager = new EtoWebViewManager(DocumentPreview);
             EditManager = new EtoWebViewManager(DocumentEditor);
-            DocumentEdit = new TextEditor(EditManager, PreviewManager);
+            PageEditor = new TextEditor(EditManager, PreviewManager);
+            PageEditor.ContentChanged += OnContentChanged;
 
             var documentBase = Resources.DocumentBase;
             documentBase = HtmlRenderer.RenderStyle(documentBase, "DocumentStyle", Resources.DocumentStyle);
-            DocumentEdit.PreviewBase = documentBase;
+            PageEditor.PreviewBase = documentBase;
 
             // Page Selector
             PageSelector.Columns.Add(new GridColumn()
@@ -63,12 +66,15 @@ namespace ThornWriter
 
             // Main Splitter
             MainSplitter.Panel1 = PageSelector;
+            PageSelector.BackgroundColor = Color.FromArgb(0, 0, 0, 0);
             MainSplitter.Panel2 = DocumentSplitter;
             MainSplitter.Orientation = Orientation.Horizontal;
             MainSplitter.Position = 1 * (ClientSize.Width / 3);
             MainSplitter.FixedPanel = SplitterFixedPanel.Panel1;
 
-            Content = MainSplitter;
+            MainPanel.Content = MainSplitter;
+            Content = MainPanel;
+
 
             // Commands - File
             var newNotebookCommand = new Command {
