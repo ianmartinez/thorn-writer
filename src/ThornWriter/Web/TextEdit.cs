@@ -126,7 +126,7 @@ namespace ThornWriter.Web
             html = HtmlRenderer.RenderStyle(html, "TextEditStyle", Resources.TextEditStyle);
             html = HtmlRenderer.RenderScript(html, "TextEditScript", Resources.TextEditScript);
 
-            html = HtmlRenderer.RenderStyle(html, "CodeMirrorTheme", Resources.CodeMirrorThemeBase16Dark);
+            html = HtmlRenderer.RenderStyle(html, "CodeMirrorTheme", Resources.CodeMirrorThemeTtcn);
 
             ViewManager.Content = html;
         }

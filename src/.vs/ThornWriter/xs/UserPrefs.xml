@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Controllers/MainForm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Resources/Editor/theme/ttcn.css">
     <Files>
-      <File FileName="ThornWriter/Resources/TextEdit.js" Line="6" Column="28" />
+      <File FileName="ThornWriter/Resources/TextEdit.js" Line="6" Column="22" />
       <File FileName="ThornWriter/Resources/TextEdit.html" Line="13" Column="21" />
-      <File FileName="ThornWriter/Resources.resx" Line="146" Column="46" />
+      <File FileName="ThornWriter/Resources.resx" Line="149" Column="39" />
       <File FileName="ThornWriter/Web/TextEdit.cs" Line="109" Column="60" />
       <File FileName="ThornWriter/Web/HtmlRenderer.cs" Line="1" Column="1" />
       <File FileName="ThornWriter/Resources/TextEdit.css" Line="1" Column="1" />
       <File FileName="ThornWriter/Resources/DocumentBase.html" Line="1" Column="1" />
       <File FileName="ThornWriter/Web/EtoWebViewManager.cs" Line="63" Column="1" />
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Text/StringBuilder.cs" />
-      <File FileName="ThornWriter/Resources/DocumentStyle.css" />
+      <File FileName="ThornWriter/Resources/DocumentStyle.css" Line="1" Column="1" />
       <File FileName="ThornWriter.XamMac/Info.plist" />
       <File FileName="Thorn/NotebookFile/Notebook.cs" />
       <File FileName="Thorn/NotebookFile/TempFolder.cs" />
@@ -21,19 +21,20 @@
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.IO.FileSystem/src/System/IO/FileSystem.Unix.cs" />
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.IO.FileSystem/src/System/IO/Directory.cs" />
       <File FileName="../../../../../../Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets" Line="2126" Column="5" />
-      <File FileName="ThornWriter/Resources/Editor/codemirror.js" />
-      <File FileName="ThornWriter/Resources/Editor/codemirror.css" />
+      <File FileName="ThornWriter/Resources/Editor/codemirror.js" Line="1" Column="1" />
+      <File FileName="ThornWriter/Resources/Editor/codemirror.css" Line="1" Column="1" />
       <File FileName="ThornWriter.XamMac/Program.cs" Line="17" Column="16" />
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs" />
       <File FileName="ThornWriter/ThornWriter.csproj" />
       <File FileName="ThornWriter/Icons.cs" Line="16" Column="86" />
-      <File FileName="ThornWriter/Views/MainForm.cs" Line="15" Column="39" />
+      <File FileName="ThornWriter/Views/MainForm.cs" Line="46" Column="49" />
       <File FileName="ThornWriter.Desktop/Program.cs" Line="1" Column="1" />
       <File FileName="ThornWriter/Resources/License.txt" Line="1" Column="1" />
       <File FileName="ThornWriter/Resources/Editor/theme/base16-dark.css" Line="1" Column="1" />
       <File FileName="ThornWriter/Resources/Editor/theme/ayu-mirage.css" Line="1" Column="1" />
       <File FileName="ThornWriter/AppInfo.cs" Line="1" Column="1" />
-      <File FileName="ThornWriter/Controllers/MainForm.cs" Line="12" Column="30" />
+      <File FileName="ThornWriter/Controllers/MainForm.cs" Line="148" Column="38" />
+      <File FileName="ThornWriter/Resources/Editor/theme/ttcn.css" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -47,12 +48,12 @@
               <Node name="Web" expanded="True" />
             </Node>
             <Node name="ThornWriter" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="MainForm.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Resources" expanded="True">
                 <Node name="Editor" expanded="True">
-                  <Node name="theme" expanded="True" />
+                  <Node name="theme" expanded="True">
+                    <Node name="ttcn.css" selected="True" />
+                  </Node>
                 </Node>
                 <Node name="icons" expanded="True">
                   <Node name="raster" expanded="True" />

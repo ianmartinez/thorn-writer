@@ -3,7 +3,7 @@
 
     var instance = CodeMirror.fromTextArea(textArea, {
         mode: "htmlmixed",
-        theme: "base16-dark",
+        theme: "ttcn",
         lineNumbers: true,
         gutter: true
     });
