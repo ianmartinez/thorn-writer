@@ -48,17 +48,6 @@ namespace ThornWriter
             PageSelector.SelectionChanged += OnChangeSelection;
             PageSelector.CellEdited += OnChangePageTitle;
 
-            for (int i = 0; i < 100; i++)
-            {
-                Document.Pages.Add(new Page()
-                {
-                    Title = "Page " + i,
-                    Content = "<b>Hello World</b> #" + i
-                });
-            }
-
-            LoadPages();
-
             // Document Splitter
             DocumentSplitter.Panel1 = DocumentPreview;
             DocumentSplitter.Panel2 = DocumentEditor;
@@ -76,7 +65,6 @@ namespace ThornWriter
 
             MainPanel.Content = MainSplitter;
             Content = MainPanel;
-
 
             // Commands - File
             var newNotebookCommand = new Command {
@@ -198,6 +186,19 @@ namespace ThornWriter
                         charactersCommand, dictionaryCommand
                     }
             };
+
+
+            // Load document
+            for (int i = 0; i < 100; i++)
+            {
+                Document.Pages.Add(new Page()
+                {
+                    Title = "Page " + i,
+                    Content = "<b>Hello World</b> #" + i
+                });
+            }
+
+            LoadPages();
         }
     }
 }

@@ -27,6 +27,9 @@ namespace ThornWriter
             }
 
             PageSelector.DataStore = PageSelectorItems;
+
+            if (PageSelectorItems.Count > 0 && this.Loaded)
+                PageSelector.SelectedRow = 0;
         }
 
         public void DeletePage()

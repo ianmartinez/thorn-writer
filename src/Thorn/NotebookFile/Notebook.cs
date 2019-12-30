@@ -61,6 +61,10 @@ namespace Thorn.NotebookFile
             File.WriteAllText(temp.PagesFile, Write(pagesFile));
             File.WriteAllText(temp.DictionaryFile, NotebookDictionary.Save());
 
+            // Delete the file if it already exists
+            if (File.Exists(filePath))
+                File.Delete(filePath);
+
             ZipFile.CreateFromDirectory(temp.RootFolder, filePath, CompressionLevel.Optimal, false);
 
             // Delete temp folder now that it is no longer needed

@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Resources/Editor/theme/ttcn.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/corlib/System.IO/FileStream.cs">
     <Files>
       <File FileName="ThornWriter/Resources/TextEdit.js" Line="6" Column="22" />
       <File FileName="ThornWriter/Resources/TextEdit.html" Line="13" Column="21" />
       <File FileName="ThornWriter/Resources.resx" Line="149" Column="39" />
-      <File FileName="ThornWriter/Web/TextEdit.cs" Line="109" Column="60" />
+      <File FileName="ThornWriter/Web/TextEdit.cs" Line="129" Column="99" />
       <File FileName="ThornWriter/Web/HtmlRenderer.cs" Line="1" Column="1" />
       <File FileName="ThornWriter/Resources/TextEdit.css" Line="1" Column="1" />
       <File FileName="ThornWriter/Resources/DocumentBase.html" Line="1" Column="1" />
@@ -35,6 +35,7 @@
       <File FileName="ThornWriter/AppInfo.cs" Line="1" Column="1" />
       <File FileName="ThornWriter/Controllers/MainForm.cs" Line="148" Column="38" />
       <File FileName="ThornWriter/Resources/Editor/theme/ttcn.css" Line="1" Column="1" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/corlib/System.IO/FileStream.cs" Line="239" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -51,16 +52,16 @@
               <Node name="Controllers" expanded="True" />
               <Node name="Resources" expanded="True">
                 <Node name="Editor" expanded="True">
-                  <Node name="theme" expanded="True">
-                    <Node name="ttcn.css" selected="True" />
-                  </Node>
+                  <Node name="theme" expanded="True" />
                 </Node>
                 <Node name="icons" expanded="True">
                   <Node name="raster" expanded="True" />
                 </Node>
               </Node>
               <Node name="Views" expanded="True" />
-              <Node name="Web" expanded="True" />
+              <Node name="Web" expanded="True">
+                <Node name="TextEdit.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="ThornWriter.Desktop" expanded="True" />
             <Node name="ThornWriter.XamMac" expanded="True">
@@ -77,6 +78,7 @@
   <MonoDevelop.Ide.ItemProperties.ThornWriter.XamMac PreferredExecutionTarget="Test1" />
   <Debugger.DebugSourceFolders>
     <String>/Users/ianmartinez/Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98</String>
+    <String>/Users/ianmartinez/Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf</String>
   </Debugger.DebugSourceFolders>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
