@@ -28,8 +28,20 @@ namespace ThornWriter
 
             PageSelector.DataStore = PageSelectorItems;
 
-            if (PageSelectorItems.Count > 0 && this.Loaded)
+            if (PageSelectorItems.Count > 0 && Loaded)
                 PageSelector.SelectedRow = 0;
+
+            UpdateAppTitle();
+        }
+
+        public void UpdateAppTitle()
+        {
+            var pageIndex = PageSelector.SelectedRow;
+            var pageName = (pageIndex == -1) ? "" : " (" + Document.Pages[pageIndex].Title + ")";
+            if (!string.IsNullOrEmpty(Document.Title))
+                Title = string.Format("{0} - {1}{2}", appTitle, Document.Title, pageName);
+            else
+                Title = appTitle;
         }
 
         public void DeletePage()
@@ -138,6 +150,8 @@ namespace ThornWriter
 
             if (pageIndex != -1)
                 PageEditor.Content = Document.Pages[pageIndex].Content;
+
+            UpdateAppTitle();
         }
 
         public void OnContentChanged(object sender, EventArgs e)
@@ -163,6 +177,7 @@ namespace ThornWriter
 
                 // Change page title
                 Document.Pages[pageIndex].Title = newTitle;
+                UpdateAppTitle();
             }
         }
     }

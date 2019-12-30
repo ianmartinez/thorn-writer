@@ -20,9 +20,10 @@ namespace ThornWriter
         IWebViewManager PreviewManager;
         IWebViewManager EditManager;
         TextEditor PageEditor;
+        string appTitle = "Thorn Writer " + AppInfo.GetFormattedVersion();
         public MainForm()
         {
-            Title = "Thorn Writer " + AppInfo.GetFormattedVersion();
+            Title = appTitle;
             ClientSize = new Size(700, 500);
             // Set managers
             PreviewManager = new EtoWebViewManager(DocumentPreview);
@@ -43,7 +44,7 @@ namespace ThornWriter
                 Editable = true,
             });
             PageSelector.ShowHeader = false;
-            PageSelector.Columns[0].Width = 250;
+            PageSelector.Columns[0].Width = 400;
             PageSelector.Border = BorderType.None;
             PageSelector.SelectionChanged += OnChangeSelection;
             PageSelector.CellEdited += OnChangePageTitle;
@@ -189,12 +190,15 @@ namespace ThornWriter
 
 
             // Load document
+            var testStr = "";
+            Document.Title = "Test Document";
             for (int i = 0; i < 100; i++)
             {
+                testStr += "<b>Hello World</b> #" + i + "\n";
                 Document.Pages.Add(new Page()
                 {
                     Title = "Page " + i,
-                    Content = "<b>Hello World</b> #" + i
+                    Content = testStr
                 });
             }
 
