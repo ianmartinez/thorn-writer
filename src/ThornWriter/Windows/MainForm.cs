@@ -4,6 +4,7 @@ using Thorn.NotebookFile;
 using ThornWriter.Web;
 using Thorn.Web;
 using System;
+using ThornWriter.Inspectors;
 
 namespace ThornWriter
 {
@@ -13,9 +14,22 @@ namespace ThornWriter
         IWebViewManager EditManager;
         TextEditor PageEditor;
         Notebook Document = new Notebook();
+        Page CurrentPage
+        {
+            get
+            {
+                var pageIndex = PageSelector.SelectedRow;
+
+                if (pageIndex != -1)
+                    return Document.Pages[pageIndex];
+
+                return null;
+            }
+        }
 
         #region "Windows"
-        PreferencesForm preferencesDialog = new PreferencesForm();
+        PreferencesForm PreferencesDialog = new PreferencesForm();
+        PageInspector PageInspector = new PageInspector();
         #endregion
 
         #region "Controls"
@@ -165,7 +179,16 @@ namespace ThornWriter
             };
             pasteCommand.Executed += OnPaste;
 
-            // Language
+            // Commands - Notebook
+            var pageInspectorCommand = new Command
+            {
+                MenuText = "Show Page Inspector...",
+                ToolBarText = "Page Inspector",
+                Image = Icons.Get("text")
+            };
+            pageInspectorCommand.Executed += OnPageInspector;
+
+            // Commands - Language
             var charactersCommand = new Command
             {
                 MenuText = "Characters...",
@@ -195,6 +218,9 @@ namespace ThornWriter
                         undoCommand, redoCommand,
                         new SeparatorMenuItem(),
                         cutCommand, copyCommand, pasteCommand
+                    }},
+                    new ButtonMenuItem { Text = "&Notebook", Items = {
+                        pageInspectorCommand
                     }},
                     new ButtonMenuItem { Text = "&Language", Items = {
                         charactersCommand, dictionaryCommand
@@ -347,6 +373,13 @@ namespace ThornWriter
 
         }
 
+        // Notebook Menu
+        public void OnPageInspector(object sender, EventArgs e)
+        {
+            PageInspector.ShowInspector(this);
+        }
+
+
         // Language Menu
         public void OnCharacters(object sender, EventArgs e)
         {
@@ -356,8 +389,8 @@ namespace ThornWriter
         // Application Menu
         public void OnPreferences(object sender, EventArgs e)
         {
-            if (!preferencesDialog.Visible)
-                preferencesDialog.Show();
+            if (!PreferencesDialog.Visible)
+                PreferencesDialog.Show();
         }
 
         public void OnQuit(object sender, EventArgs e)
@@ -378,10 +411,11 @@ namespace ThornWriter
 
         public void OnChangeSelection(object sender, EventArgs e)
         {
-            var pageIndex = PageSelector.SelectedRow;
-
-            if (pageIndex != -1)
-                PageEditor.Content = Document.Pages[pageIndex].Content;
+            if (CurrentPage != null)
+            {
+                PageEditor.Content = CurrentPage.Content;
+                PageInspector.Model = CurrentPage;
+            }
 
             UpdateAppTitle();
         }

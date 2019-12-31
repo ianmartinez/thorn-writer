@@ -1,6 +1,12 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Inspectors/InspectorForm.cs">
+    <Files>
+      <File FileName="ThornWriter/Windows/MainForm.cs" Line="379" Column="40" />
+      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="20" Column="10" />
+      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="26" Column="23" />
+      <File FileName="Thorn/NotebookFile/Notebook.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -9,13 +15,20 @@
               <Node name="Dependencies" expanded="True">
                 <Node name="SdkDependencies" expanded="True" />
               </Node>
-              <Node name="NotebookFile" expanded="True">
-                <Node name="Page.cs" selected="True" />
-              </Node>
+              <Node name="NotebookFile" expanded="True" />
               <Node name="Web" expanded="True" />
             </Node>
             <Node name="ThornWriter" expanded="True">
-              <Node name="Inspectors" expanded="True" />
+              <Node name="Inspectors" expanded="True">
+                <Node name="InspectorForm.cs" selected="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="icons" expanded="True">
+                  <Node name="raster" expanded="True">
+                    <Node name="retina" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
               <Node name="Web" expanded="True" />
               <Node name="Windows" expanded="True" />
             </Node>

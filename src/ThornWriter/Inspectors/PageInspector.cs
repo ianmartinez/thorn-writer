@@ -1,36 +1,38 @@
-﻿using Eto.Forms;
+﻿using System;
+using Eto.Drawing;
 using Thorn.NotebookFile;
 
 namespace ThornWriter.Inspectors
 {
-    public class PageInspector : Form, IInspector<Page>
+    public enum PageInspectorValue
     {
-        private Page model;
+        Title,
+        Position
+    }
 
+    public class PageInspector : InspectorForm<Page, PageInspectorValue>
+    {
         public PageInspector()
         {
-            Title = "Page Properties";
+            Title = "Page Info";
+            Size = new Size(300, 600);
         }
 
-        public Page Model
+        public override void RefreshAll()
         {
-            get => model;
+            base.RefreshAll();
+        }
 
-            set
+        public override void RefreshValue(PageInspectorValue name)
+        {
+            switch (name)
             {
-                model = value;
-                RefreshAll();
+                case PageInspectorValue.Title:
+                    Title =  Model.Title + " Info";
+                    break;
+                case PageInspectorValue.Position:
+                    break;
             }
-        }
-
-        public void RefreshValue(string name)
-        {
-
-        }
-
-        public void RefreshAll()
-        {
-
         }
     }
 }
