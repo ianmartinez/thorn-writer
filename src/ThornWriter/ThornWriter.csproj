@@ -23,10 +23,10 @@
     <ProjectReference Include="..\Thorn\Thorn.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Windows\" />
     <Folder Include="Resources\" />
     <Folder Include="Web\" />
+    <Folder Include="Inspectors\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\icons\raster\retina\accessories-text-editor.png" />
