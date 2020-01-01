@@ -68,10 +68,11 @@ namespace ThornWriter.Inspectors
         // Call instead of the standard .Show() method
         public void ShowInspector(Form parent)
         {
-            Owner = parent;
-
             if (!Visible)
+            {
                 Show();
+                Owner = parent;
+            }
         }
     }
 }

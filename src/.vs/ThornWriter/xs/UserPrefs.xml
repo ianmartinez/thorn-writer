@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Inspectors/PageInspector.cs">
     <Files>
-      <File FileName="ThornWriter/Windows/MainForm.cs" Line="379" Column="47" />
-      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="59" Column="53" />
-      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="18" Column="6" />
+      <File FileName="ThornWriter/Windows/MainForm.cs" Line="65" Column="32" />
+      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="38" Column="37" />
+      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="73" Column="24" />
       <File FileName="Thorn/NotebookFile/Notebook.cs" Line="1" Column="1" />
       <File FileName="ThornWriter/Web/TextEdit.cs" Line="23" Column="38" />
       <File FileName="ThornWriter/Windows/PreferencesForm.cs" Line="1" Column="1" />
@@ -24,6 +24,7 @@
               <Node name="Inspectors" expanded="True">
                 <Node name="PageInspector.cs" selected="True" />
               </Node>
+              <Node name="Resources" expanded="True" />
               <Node name="Web" expanded="True" />
               <Node name="Windows" expanded="True" />
             </Node>
@@ -34,6 +35,9 @@
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

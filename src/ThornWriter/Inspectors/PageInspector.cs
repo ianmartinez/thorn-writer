@@ -30,17 +30,17 @@ namespace ThornWriter.Inspectors
             {
                 Padding = new Padding(10), // padding around cells
                 Spacing = new Size(5, 5), // spacing between each cell
-                Visible = true,
                 Rows =
                     {
                         new TableRow(
-                            new Label { Text = "Title:" },
+                            new Label { Text = "Title:", VerticalAlignment = VerticalAlignment.Center },
                             new TableCell(titleTextBox, true)
                         ),
                         new TableRow(
-                            new Label { Text = "Position:" },
+                            new Label { Text = "Position:", VerticalAlignment = VerticalAlignment.Center },
                             new TableCell(positionStepper, true)
-                        )
+                        ),
+                        null
                     }
             };
 
