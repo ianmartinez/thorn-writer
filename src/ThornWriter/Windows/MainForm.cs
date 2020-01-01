@@ -48,6 +48,7 @@ namespace ThornWriter
         {
             Title = appTitle;
             ClientSize = new Size(700, 500);
+
             // Set managers
             PreviewManager = new EtoWebViewManager(DocumentPreview);
             EditManager = new EtoWebViewManager(DocumentEditor);
@@ -244,6 +245,8 @@ namespace ThornWriter
                     }
             };
 
+            // Inspectors
+            PageInspector.ValueChanged += OnPageInspectorValueChanged;
 
             // Load document
             var testStr = "";
@@ -251,7 +254,7 @@ namespace ThornWriter
             for (int i = 0; i < 100; i++)
             {
                 testStr += "<b>Hello World</b> #" + i + "\n";
-                Document.Pages.Add(new Page()
+                Document.Pages.Add(new Page(Document)
                 {
                     Title = "Page " + i,
                     Content = testStr
@@ -261,7 +264,7 @@ namespace ThornWriter
             LoadPages();
         }
         #endregion
-        
+
         public void LoadPages()
         {
             PageSelectorItems.Clear();
@@ -422,17 +425,13 @@ namespace ThornWriter
 
         public void OnContentChanged(object sender, EventArgs e)
         {
-            var pageIndex = PageSelector.SelectedRow;
-
-            if (pageIndex != -1)
-                Document.Pages[pageIndex].Content = PageEditor.Content;
+            if (CurrentPage != null)
+                CurrentPage.Content = PageEditor.Content;
         }
 
         public void OnChangePageTitle(object sender, GridViewCellEventArgs e)
         {
-            var pageIndex = PageSelector.SelectedRow;
-
-            if (pageIndex != -1)
+            if (CurrentPage != null)
             {
                 var item = (TreeGridItem)e.Item;
                 /*
@@ -442,8 +441,43 @@ namespace ThornWriter
                 var newTitle = item.Values[1].ToString();
 
                 // Change page title
-                Document.Pages[pageIndex].Title = newTitle;
+                CurrentPage.Title = newTitle;
                 UpdateAppTitle();
+            }
+        }
+
+        private void OnPageInspectorValueChanged(object sender, InspectorValueChangedEventArgs<PageInspectorValue> e)
+        {
+            switch(e.TargetValue)
+            {
+                case PageInspectorValue.Title:
+                    if (CurrentPage != null)
+                    {
+                        CurrentPage.Title = (string)e.NewValue;
+                        (PageSelectorItems[CurrentPage.Index] as TreeGridItem).Values[1] = e.NewValue;
+                        PageSelector.ReloadData();
+                        UpdateAppTitle();
+                    }
+                    break;
+                case PageInspectorValue.Index:
+                    if (CurrentPage != null)
+                    {
+                        var oldIndex = int.Parse(e.OldValue.ToString());
+                        var newIndex = int.Parse(e.NewValue.ToString());
+
+                        CurrentPage.Index = newIndex;
+                        var pageRow = PageSelectorItems[oldIndex];
+                        PageSelectorItems.Remove(pageRow);
+                        PageSelectorItems.Insert(newIndex, pageRow);
+                        PageSelector.ReloadData();
+                        PageSelector.SelectedRow = newIndex;
+                    }
+                    break;
+                case PageInspectorValue.Notes:
+                    if (CurrentPage != null)
+                        CurrentPage.Notes = e.NewValue.ToString();
+
+                    break;
             }
         }
     }

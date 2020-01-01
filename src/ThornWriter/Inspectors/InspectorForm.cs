@@ -52,7 +52,7 @@ namespace ThornWriter.Inspectors
         // Fire InspectorValueChanged with EventArgs if the new value is different
         public virtual void UpdateValue<ValueType>(ValueEnumType targetValue, IComparable oldValue, IComparable newValue)
         {
-            if (oldValue != newValue && !isRefreshing)
+            if (ValueChanged != null && oldValue != newValue && !isRefreshing)
             {
                 var args = new InspectorValueChangedEventArgs<ValueEnumType>()
                 {

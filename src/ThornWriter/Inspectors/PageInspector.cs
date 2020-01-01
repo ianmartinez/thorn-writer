@@ -8,23 +8,33 @@ namespace ThornWriter.Inspectors
     public enum PageInspectorValue
     {
         Title,
-        Position
+        Index,
+        Notes
     }
 
     public class PageInspector : InspectorForm<Page, PageInspectorValue>
     {
         TableLayout layout;
         TextBox titleTextBox;
-        NumericStepper positionStepper;
+        TextArea notesTextArea;
+        NumericStepper indexStepper;
 
         public PageInspector()
         {
             Title = "Page Info";
-            Size = new Size(300, 600);
+            Size = new Size(300, -1);
 
             titleTextBox = new TextBox();
             titleTextBox.TextChanged += OnTitleChanged;
-            positionStepper = new NumericStepper();
+
+            indexStepper = new NumericStepper
+            {
+                MinValue = 0
+            };
+            indexStepper.ValueChanged += OnIndexChanged;
+
+            notesTextArea = new TextArea();
+            notesTextArea.TextChanged += OnNotesChanged;
 
             layout = new TableLayout()
             {
@@ -32,15 +42,12 @@ namespace ThornWriter.Inspectors
                 Spacing = new Size(5, 5), // spacing between each cell
                 Rows =
                     {
-                        new TableRow(
-                            new Label { Text = "Title:", VerticalAlignment = VerticalAlignment.Center },
-                            new TableCell(titleTextBox, true)
-                        ),
-                        new TableRow(
-                            new Label { Text = "Position:", VerticalAlignment = VerticalAlignment.Center },
-                            new TableCell(positionStepper, true)
-                        ),
-                        null
+                        new TableRow(new Label { Text = "Title:", VerticalAlignment = VerticalAlignment.Bottom }),
+                        new TableRow(new TableCell(titleTextBox, true)),
+                        new TableRow(new Label { Text = "Index:", VerticalAlignment = VerticalAlignment.Bottom}),
+                        new TableRow(new TableCell(indexStepper, true)),
+                        new TableRow(new Label { Text = "Notes:", VerticalAlignment = VerticalAlignment.Bottom}),
+                        new TableRow(new TableCell(notesTextArea, true))
                     }
             };
 
@@ -50,10 +57,16 @@ namespace ThornWriter.Inspectors
             };
         }
 
+        public override void UpdateValue<ValueType>(PageInspectorValue targetValue, IComparable oldValue, IComparable newValue)
+        {
+            base.UpdateValue<ValueType>(targetValue, oldValue, newValue);
+        }
+
         public override void RefreshAll()
         {
             base.RefreshAll();
         }
+
 
         public override void RefreshValue(PageInspectorValue targetValue)
         {
@@ -62,24 +75,36 @@ namespace ThornWriter.Inspectors
             switch (targetValue)
             {
                 case PageInspectorValue.Title:
-                    Title = Model.Title + " Info";
                     titleTextBox.Text = Model.Title;
+                    UpdateTitle();
                     break;
-                case PageInspectorValue.Position:
+                case PageInspectorValue.Index:
+                    indexStepper.Value = Model.Index;
                     break;
             }
 
             isRefreshing = false;
         }
 
+        private void UpdateTitle()
+        {
+            Title = titleTextBox.Text + " Info";
+        }
+
         private void OnTitleChanged(object sender, EventArgs e)
         {
+            UpdateTitle();
             UpdateValue<string>(PageInspectorValue.Title, Model.Title, titleTextBox.Text);
         }
 
-        private void OnPositionChanged(object sender, EventArgs e)
+        private void OnIndexChanged(object sender, EventArgs e)
         {
+            UpdateValue<int>(PageInspectorValue.Index, Model.Index, indexStepper.Value);
+        }
 
+        private void OnNotesChanged(object sender, EventArgs e)
+        {
+            UpdateValue<string>(PageInspectorValue.Notes, Model.Notes, notesTextArea.Text);
         }
     }
 }

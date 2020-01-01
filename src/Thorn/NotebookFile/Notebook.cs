@@ -65,6 +65,7 @@ namespace Thorn.NotebookFile
             if (File.Exists(filePath))
                 File.Delete(filePath);
 
+            // Create zip file from the temp folder 
             ZipFile.CreateFromDirectory(temp.RootFolder, filePath, CompressionLevel.Optimal, false);
 
             // Delete temp folder now that it is no longer needed
@@ -98,7 +99,7 @@ namespace Thorn.NotebookFile
                 var pageFilePath = temp.GetPagePath(i);
                 if (File.Exists(pageFilePath))
                 {
-                    Pages.Add(new Page() {
+                    Pages.Add(new Page(this) {
                         Title = pageTitle,
                         Content = File.ReadAllText(pageFilePath)
                     });

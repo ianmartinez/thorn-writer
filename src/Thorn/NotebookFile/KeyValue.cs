@@ -39,8 +39,12 @@ namespace Thorn.NotebookFile
             foreach (string line in lines)
             {
                 // Skip if comment or invalid
-                if (line.StartsWith("!", StringComparison.CurrentCulture) || line.StartsWith("#", StringComparison.CurrentCulture) || !line.Contains("="))
+                if (line.StartsWith("!", StringComparison.CurrentCulture)
+                    || line.StartsWith("#", StringComparison.CurrentCulture)
+                    || !line.Contains("="))
+                {
                     continue;
+                }
 
                 kvList.Add(UnformatString(line.Split('=')[0]), UnformatString(line.Split('=')[1]));
             }

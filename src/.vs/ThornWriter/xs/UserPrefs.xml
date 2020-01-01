@@ -1,13 +1,18 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Inspectors/PageInspector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs">
     <Files>
-      <File FileName="ThornWriter/Windows/MainForm.cs" Line="65" Column="32" />
-      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="38" Column="37" />
-      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="73" Column="24" />
-      <File FileName="Thorn/NotebookFile/Notebook.cs" Line="1" Column="1" />
-      <File FileName="ThornWriter/Web/TextEdit.cs" Line="23" Column="38" />
+      <File FileName="ThornWriter/Windows/MainForm.cs" Line="473" Column="61" />
+      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="28" Column="56" />
+      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="53" Column="23" />
+      <File FileName="Thorn/NotebookFile/Notebook.cs" Line="98" Column="61" />
+      <File FileName="ThornWriter/Web/TextEdit.cs" Line="24" Column="48" />
       <File FileName="ThornWriter/Windows/PreferencesForm.cs" Line="1" Column="1" />
+      <File FileName="Thorn/NotebookFile/KeyValue.cs" Line="45" Column="18" />
+      <File FileName="Thorn/NotebookFile/Dictionary.cs" Line="8" Column="16" />
+      <File FileName="Thorn/NotebookFile/Page.cs" Line="21" Column="37" />
+      <File FileName="Thorn/NotebookFile/TempFolder.cs" Line="1" Column="1" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs" Line="101" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,11 +26,11 @@
               <Node name="Web" expanded="True" />
             </Node>
             <Node name="ThornWriter" expanded="True">
-              <Node name="Inspectors" expanded="True">
-                <Node name="PageInspector.cs" selected="True" />
-              </Node>
+              <Node name="Inspectors" expanded="True" />
               <Node name="Resources" expanded="True" />
-              <Node name="Web" expanded="True" />
+              <Node name="Web" expanded="True">
+                <Node name="TextEdit.cs" selected="True" />
+              </Node>
               <Node name="Windows" expanded="True" />
             </Node>
             <Node name="ThornWriter.Desktop" expanded="True" />
