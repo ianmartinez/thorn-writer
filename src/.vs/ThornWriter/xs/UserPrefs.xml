@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Inspectors/InspectorForm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Inspectors/PageInspector.cs">
     <Files>
-      <File FileName="ThornWriter/Windows/MainForm.cs" Line="379" Column="40" />
-      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="20" Column="10" />
-      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="26" Column="23" />
+      <File FileName="ThornWriter/Windows/MainForm.cs" Line="379" Column="47" />
+      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="59" Column="53" />
+      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="18" Column="6" />
       <File FileName="Thorn/NotebookFile/Notebook.cs" Line="1" Column="1" />
+      <File FileName="ThornWriter/Web/TextEdit.cs" Line="23" Column="38" />
+      <File FileName="ThornWriter/Windows/PreferencesForm.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,14 +22,7 @@
             </Node>
             <Node name="ThornWriter" expanded="True">
               <Node name="Inspectors" expanded="True">
-                <Node name="InspectorForm.cs" selected="True" />
-              </Node>
-              <Node name="Resources" expanded="True">
-                <Node name="icons" expanded="True">
-                  <Node name="raster" expanded="True">
-                    <Node name="retina" expanded="True" />
-                  </Node>
-                </Node>
+                <Node name="PageInspector.cs" selected="True" />
               </Node>
               <Node name="Web" expanded="True" />
               <Node name="Windows" expanded="True" />
