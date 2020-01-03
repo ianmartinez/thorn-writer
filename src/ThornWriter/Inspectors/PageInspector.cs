@@ -109,6 +109,9 @@ namespace ThornWriter.Inspectors
                     indexStepper.Value = Model?.Index ?? 0;
                     indexStepper.MaxValue = Model?.ParentNotebook.Pages.Count - 1 ?? 0;
                     break;
+                case PageInspectorValue.Notes:
+                    notesTextArea.Text = Model?.Notes ?? "";
+                    break;
             }
 
             IsRefreshing = false;
