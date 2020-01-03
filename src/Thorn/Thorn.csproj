@@ -12,6 +12,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Web\" />
+    <Folder Include="Inspectors\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />

@@ -5,4 +5,3 @@
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/obj/Debug/netstandard1.6/Thorn.AssemblyInfo.cs
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/obj/Debug/netstandard1.6/Thorn.dll
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/obj/Debug/netstandard1.6/Thorn.pdb
-/Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/obj/Debug/netstandard1.6/Thorn.csprojAssemblyReference.cache

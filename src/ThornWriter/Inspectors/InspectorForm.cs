@@ -1,15 +1,9 @@
 ﻿using System;
 using Eto.Forms;
+using Thorn.Inspectors;
 
 namespace ThornWriter.Inspectors
 {
-    public class InspectorValueChangedEventArgs<ValueEnumType> : EventArgs
-    {
-        public object OldValue { get; set; }
-        public object NewValue { get; set; }
-        public ValueEnumType TargetValue { get; set; }
-    }
-
     /*
      * An inspector is a type of tool window/panel that contains
      * info for an item that can be viewed/modified
@@ -22,10 +16,12 @@ namespace ThornWriter.Inspectors
          * If the value is being refreshed automatically, to avoid accidentally
          * triggering a ValueChanged event
          */
-        internal bool isRefreshing;
+        public bool IsRefreshing { get; set; }
 
         // To be fired when the user changes something on the inspector and the value is different
         public event EventHandler<InspectorValueChangedEventArgs<ValueEnumType>> ValueChanged;
+        // To be fired when the model is changed
+        public event EventHandler<EventArgs> ModelChanged;
 
         // The object that is being inspected
         public ModelType Model
@@ -35,6 +31,7 @@ namespace ThornWriter.Inspectors
             set
             {
                 model = value;
+                ModelChanged?.Invoke(this, new EventArgs());
                 RefreshAll();
             }
         }
@@ -52,7 +49,7 @@ namespace ThornWriter.Inspectors
         // Fire InspectorValueChanged with EventArgs if the new value is different
         public virtual void UpdateValue<ValueType>(ValueEnumType targetValue, IComparable oldValue, IComparable newValue)
         {
-            if (ValueChanged != null && oldValue != newValue && !isRefreshing)
+            if (ValueChanged != null && oldValue != newValue && !IsRefreshing)
             {
                 var args = new InspectorValueChangedEventArgs<ValueEnumType>()
                 {
@@ -70,6 +67,7 @@ namespace ThornWriter.Inspectors
         {
             if (!Visible)
             {
+                RefreshAll();
                 Show();
                 Owner = parent;
             }

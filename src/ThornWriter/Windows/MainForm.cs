@@ -5,6 +5,7 @@ using ThornWriter.Web;
 using Thorn.Web;
 using System;
 using ThornWriter.Inspectors;
+using Thorn.Inspectors;
 
 namespace ThornWriter
 {
@@ -249,6 +250,7 @@ namespace ThornWriter
             PageInspector.ValueChanged += OnPageInspectorValueChanged;
 
             // Load document
+            PageInspector.IsRefreshing = true;
             var testStr = "";
             Document.Title = "Test Document";
             for (int i = 0; i < 100; i++)
@@ -262,6 +264,7 @@ namespace ThornWriter
             }
 
             LoadPages();
+            PageInspector.IsRefreshing = false;
         }
         #endregion
 
