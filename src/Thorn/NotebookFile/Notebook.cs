@@ -78,6 +78,7 @@ namespace Thorn.NotebookFile
 
                 pagesFile.Add(new Line(LineType.Comment, "Page " + i));
                 pagesFile.Add(new Line(LineType.KeyValue, i + ".title", page.Title));
+                pagesFile.Add(new Line(LineType.KeyValue, i + ".notes", page.Notes));
                 File.WriteAllText(temp.GetPagePath(i), page.Content);
             }
 
@@ -123,11 +124,13 @@ namespace Thorn.NotebookFile
             for(var i=0; i<pageFiles.Count; i++)
             {
                 var pageTitle = Search(pagesFile, i + ".title");
+                var pageNotes = Search(pagesFile, i + ".notes");
                 var pageFilePath = temp.GetPagePath(i);
                 if (File.Exists(pageFilePath))
                 {
                     Pages.Add(new Page(this) {
                         Title = pageTitle,
+                        Notes = pageNotes,
                         Content = File.ReadAllText(pageFilePath)
                     });
                 }
