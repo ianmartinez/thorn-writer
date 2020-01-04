@@ -49,10 +49,19 @@ namespace ThornWriter.Inspectors
             set
             {
                 model = value;
-                Content = (model == null) ? noModelPanel : modelPanel;
+                UpdatePanel();
                 ModelChanged?.Invoke(this, new EventArgs());
                 RefreshAll();
             }
+        }
+
+        // If there is currently a model
+        public bool ModelExists => Model != null;
+
+        // Choose which panel to show based on if there is a model or not
+        private void UpdatePanel()
+        {
+            Content = ModelExists ? modelPanel : noModelPanel;
         }
 
         // Reload a specific value on the inspector
@@ -92,6 +101,8 @@ namespace ThornWriter.Inspectors
         {
             if (!Visible)
             {
+                UpdatePanel();
+
                 Owner = null;
                 RefreshAll();
                 Show();

@@ -22,7 +22,6 @@ namespace ThornWriter.Inspectors
         Button deletePageButton;
         private bool hasSubscribed;
         
-
         public PageInspector()
         {
             UpdateTitle();
@@ -81,16 +80,15 @@ namespace ThornWriter.Inspectors
         {
             UpdateTitle();
 
-            if (Model != null)
+            if (ModelExists)
             {
                 if (Height < 300)
                     Height = 300;
 
-                // Remove event handler if it already exists
-                if (hasSubscribed)
-                    Model.ParentNotebook.ValueChanged -= ParentNotebook_ValueChanged;
+                // Add event handler if it doesn't already exist
+                if (!hasSubscribed)
+                    Model.ParentNotebook.ValueChanged += ParentNotebook_ValueChanged;
 
-                Model.ParentNotebook.ValueChanged += ParentNotebook_ValueChanged;
                 hasSubscribed = true;
             }
         }
@@ -108,14 +106,9 @@ namespace ThornWriter.Inspectors
             }
         }
 
-        public override void RefreshAll()
-        {
-            base.RefreshAll();
-        }
-
         public override void RefreshValue(PageInspectorValue targetValue)
         {
-            if (Model != null)
+            if (ModelExists)
             {
                 IsRefreshing = true;
 
@@ -140,19 +133,12 @@ namespace ThornWriter.Inspectors
 
         private void UpdateTitle()
         {
-            if(Model != null)
-            {
-                Title = titleTextBox.Text + " - Info";
-            }
-            else
-            {
-                Title = "Page Info";
-            }
+            Title = (ModelExists) ? titleTextBox.Text + " - Info" : "Page Info";
         }
 
         private void OnDelete(object sender, EventArgs e)
         {
-            if (Model != null)
+            if (ModelExists)
             {
                 var deleteWarning =
                     MessageBox.Show(string.Format("Are you sure you want to delete the page '{0}'? This cannot be undone.", Model.Title),
@@ -167,7 +153,7 @@ namespace ThornWriter.Inspectors
 
         private void OnTitleChanged(object sender, EventArgs e)
         {
-            if (Model != null)
+            if (ModelExists)
             {
                 UpdateTitle();
                 UpdateValue<string>(PageInspectorValue.Title, Model.Title, titleTextBox.Text);
@@ -176,7 +162,7 @@ namespace ThornWriter.Inspectors
 
         private void OnIndexChanged(object sender, EventArgs e)
         {
-            if (Model != null && Model.Index != -1) // It can temporarily be -1 while it is being moved
+            if (ModelExists && Model.Index != -1) // It can temporarily be -1 while it is being moved
             { 
                 UpdateValue<int>(PageInspectorValue.Index, Model.Index, indexStepper.Value);
             }
@@ -184,7 +170,7 @@ namespace ThornWriter.Inspectors
 
         private void OnNotesChanged(object sender, EventArgs e)
         {
-            if (Model != null)
+            if (ModelExists)
             {
                 UpdateValue<string>(PageInspectorValue.Notes, Model.Notes, notesTextArea.Text);
             }
