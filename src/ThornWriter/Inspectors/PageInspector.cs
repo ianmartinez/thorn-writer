@@ -15,17 +15,24 @@ namespace ThornWriter.Inspectors
 
     public class PageInspector : InspectorForm<Page, PageInspectorValue>
     {
-        TableLayout layout;
+        TableLayout pageLayout;
         TextBox titleTextBox;
         TextArea notesTextArea;
         NumericStepper indexStepper;
+        Panel noPagePanel;
+        Panel pagePanel;
         private bool hasSubscribed;
+        
 
         public PageInspector()
         {
             Title = "Page Info";
             Size = new Size(300, -1);
 
+            noPagePanel = new Panel {
+                Content = new Label { Text = "No page selected" },
+                Padding = new Padding(10)
+            };
             ModelChanged += PageInspector_ModelChanged;
 
             titleTextBox = new TextBox();
@@ -41,7 +48,7 @@ namespace ThornWriter.Inspectors
             notesTextArea = new TextArea();
             notesTextArea.TextChanged += OnNotesChanged;
 
-            layout = new TableLayout()
+            pageLayout = new TableLayout()
             {
                 Padding = new Padding(10), // padding around cells
                 Spacing = new Size(5, 5), // spacing between each cell
@@ -56,20 +63,29 @@ namespace ThornWriter.Inspectors
                     }
             };
 
-            Content = new Panel()
-            {
-                Content = layout
-            };
+            pagePanel = new Panel { Content = pageLayout };
+            Content = (Model == null) ? noPagePanel : pagePanel;
         }
 
         private void PageInspector_ModelChanged(object sender, EventArgs e)
         {
-            // Remove event handler if it already exists
-            if (hasSubscribed)
-                Model.ParentNotebook.ValueChanged -= ParentNotebook_ValueChanged;
+            if (Model != null)
+            {
+                Content = pagePanel;
+                if (Height < 300)
+                    Height = 300;
 
-            Model.ParentNotebook.ValueChanged += ParentNotebook_ValueChanged;
-            hasSubscribed = true;
+                // Remove event handler if it already exists
+                if (hasSubscribed)
+                    Model.ParentNotebook.ValueChanged -= ParentNotebook_ValueChanged;
+
+                Model.ParentNotebook.ValueChanged += ParentNotebook_ValueChanged;
+                hasSubscribed = true;
+            }
+            else
+            {
+                Content = noPagePanel;
+            }
         }
 
         private void ParentNotebook_ValueChanged(object sender, InspectorValueChangedEventArgs<NotebookInspectorValue> e)
@@ -97,24 +113,27 @@ namespace ThornWriter.Inspectors
 
         public override void RefreshValue(PageInspectorValue targetValue)
         {
-            IsRefreshing = true;
-
-            switch (targetValue)
+            if (Model != null)
             {
-                case PageInspectorValue.Title:
-                    titleTextBox.Text = Model?.Title ?? "";
-                    UpdateTitle();
-                    break;
-                case PageInspectorValue.Index:
-                    indexStepper.Value = Model?.Index ?? 0;
-                    indexStepper.MaxValue = Model?.ParentNotebook.Pages.Count - 1 ?? 0;
-                    break;
-                case PageInspectorValue.Notes:
-                    notesTextArea.Text = Model?.Notes ?? "";
-                    break;
-            }
+                IsRefreshing = true;
 
-            IsRefreshing = false;
+                switch (targetValue)
+                {
+                    case PageInspectorValue.Title:
+                        titleTextBox.Text = Model.Title;
+                        UpdateTitle();
+                        break;
+                    case PageInspectorValue.Index:
+                        indexStepper.Value = Model.Index;
+                        indexStepper.MaxValue = Model.ParentNotebook.Pages.Count - 1;
+                        break;
+                    case PageInspectorValue.Notes:
+                        notesTextArea.Text = Model.Notes;
+                        break;
+                }
+
+                IsRefreshing = false;
+            }
         }
 
         private void UpdateTitle()
@@ -124,19 +143,27 @@ namespace ThornWriter.Inspectors
 
         private void OnTitleChanged(object sender, EventArgs e)
         {
-            UpdateTitle();
-            UpdateValue<string>(PageInspectorValue.Title, Model.Title, titleTextBox.Text);
+            if (Model != null)
+            {
+                UpdateTitle();
+                UpdateValue<string>(PageInspectorValue.Title, Model.Title, titleTextBox.Text);
+            }
         }
 
         private void OnIndexChanged(object sender, EventArgs e)
         {
-            if(Model.Index != -1) // It can temporarily be -1 while it is being moved
+            if (Model != null && Model.Index != -1) // It can temporarily be -1 while it is being moved
+            { 
                 UpdateValue<int>(PageInspectorValue.Index, Model.Index, indexStepper.Value);
+            }
         }
 
         private void OnNotesChanged(object sender, EventArgs e)
         {
-            UpdateValue<string>(PageInspectorValue.Notes, Model.Notes, notesTextArea.Text);
+            if (Model != null)
+            {
+                UpdateValue<string>(PageInspectorValue.Notes, Model.Notes, notesTextArea.Text);
+            }
         }
     }
 }
