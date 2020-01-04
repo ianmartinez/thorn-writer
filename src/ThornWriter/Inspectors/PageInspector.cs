@@ -26,11 +26,16 @@ namespace ThornWriter.Inspectors
 
         public PageInspector()
         {
-            Title = "Page Info";
+            UpdateTitle();
             Size = new Size(300, -1);
+            MinimumSize = new Size(200, 100);
 
             noPagePanel = new Panel {
-                Content = new Label { Text = "No page selected" },
+                Content = new Label {
+                    Text = "No page selected",
+                    TextAlignment = TextAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center
+                },
                 Padding = new Padding(10)
             };
             ModelChanged += PageInspector_ModelChanged;
@@ -69,6 +74,8 @@ namespace ThornWriter.Inspectors
 
         private void PageInspector_ModelChanged(object sender, EventArgs e)
         {
+            UpdateTitle();
+
             if (Model != null)
             {
                 Content = pagePanel;
@@ -138,7 +145,14 @@ namespace ThornWriter.Inspectors
 
         private void UpdateTitle()
         {
-            Title = titleTextBox.Text + " - Info";
+            if(Model != null)
+            {
+                Title = titleTextBox.Text + " - Info";
+            }
+            else
+            {
+                Title = "Page Info";
+            }
         }
 
         private void OnTitleChanged(object sender, EventArgs e)
