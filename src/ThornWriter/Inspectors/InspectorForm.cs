@@ -22,6 +22,8 @@ namespace ThornWriter.Inspectors
         public event EventHandler<InspectorValueChangedEventArgs<ValueEnumType>> ValueChanged;
         // To be fired when the model is changed
         public event EventHandler<EventArgs> ModelChanged;
+        // When the user has clicked the "delete" button on the inspector
+        public event EventHandler<EventArgs> DeleteModel;
 
         // The object that is being inspected
         public ModelType Model
@@ -60,6 +62,12 @@ namespace ThornWriter.Inspectors
 
                 ValueChanged(this, args);
             }
+        }
+
+        // Trigger the delete event when the user has decided to delete the model
+        public virtual void Delete()
+        {
+            DeleteModel?.Invoke(this, new EventArgs());
         }
 
         // Call instead of the standard .Show() method

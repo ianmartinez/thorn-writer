@@ -21,14 +21,15 @@ namespace ThornWriter.Inspectors
         NumericStepper indexStepper;
         Panel noPagePanel;
         Panel pagePanel;
+        Button deletePageButton;
         private bool hasSubscribed;
         
 
         public PageInspector()
         {
             UpdateTitle();
-            Size = new Size(300, -1);
-            MinimumSize = new Size(200, 100);
+            Size = new Size(250, -1);
+            MinimumSize = new Size(200, 225);
 
             noPagePanel = new Panel {
                 Content = new Label {
@@ -53,12 +54,27 @@ namespace ThornWriter.Inspectors
             notesTextArea = new TextArea();
             notesTextArea.TextChanged += OnNotesChanged;
 
+            deletePageButton = new Button
+            {
+                Text = "Delete Page"
+            };
+            deletePageButton.Click += OnDelete;
+
             pageLayout = new TableLayout()
             {
                 Padding = new Padding(10), // padding around cells
                 Spacing = new Size(5, 5), // spacing between each cell
                 Rows =
                     {
+                        new TableRow(new StackLayout {
+                            Orientation = Orientation.Vertical,
+                            HorizontalContentAlignment = HorizontalAlignment.Center,
+                            VerticalContentAlignment = VerticalAlignment.Center,
+                            Items =
+                            {
+                                deletePageButton
+                            }
+                        }),
                         new TableRow(new Label { Text = "Title:", VerticalAlignment = VerticalAlignment.Bottom }),
                         new TableRow(new TableCell(titleTextBox, true)),
                         new TableRow(new Label { Text = "Index:", VerticalAlignment = VerticalAlignment.Bottom }),
@@ -68,7 +84,9 @@ namespace ThornWriter.Inspectors
                     }
             };
 
-            pagePanel = new Panel { Content = pageLayout };
+            pagePanel = new Panel {
+                Content = pageLayout
+            };
             Content = (Model == null) ? noPagePanel : pagePanel;
         }
 
@@ -106,11 +124,6 @@ namespace ThornWriter.Inspectors
                         break;
                 }
             }
-        }
-
-        public override void UpdateValue<ValueType>(PageInspectorValue targetValue, IComparable oldValue, IComparable newValue)
-        {
-            base.UpdateValue<ValueType>(targetValue, oldValue, newValue);
         }
 
         public override void RefreshAll()
@@ -152,6 +165,21 @@ namespace ThornWriter.Inspectors
             else
             {
                 Title = "Page Info";
+            }
+        }
+
+        private void OnDelete(object sender, EventArgs e)
+        {
+            if (Model != null)
+            {
+                var deleteWarning =
+                    MessageBox.Show(string.Format("Are you sure you want to delete the page '{0}'? This cannot be undone.", Model.Title),
+                        MessageBoxButtons.YesNo, MessageBoxType.Warning, MessageBoxDefaultButton.No);
+
+                if (deleteWarning == DialogResult.Yes)
+                {
+                    Delete();
+                }
             }
         }
 

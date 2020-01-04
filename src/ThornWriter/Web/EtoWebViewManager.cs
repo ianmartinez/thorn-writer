@@ -22,7 +22,8 @@ namespace ThornWriter.Web
         }
 
         private string _html;
-        public string Content {
+        public string Content
+        {
             get => _html;
             set
             {
@@ -32,9 +33,16 @@ namespace ThornWriter.Web
             }
         }
 
-        public string Url {
+        public string Url
+        {
             get => webView.Url.ToString();
             set => webView.Url = new Uri(value);
+        }
+
+        public bool Enabled
+        {
+            get => webView.Visible;
+            set => webView.Visible = value;
         }
 
         public void GoBack()

@@ -184,7 +184,7 @@ namespace ThornWriter
             // Commands - Notebook
             var pageInspectorCommand = new Command
             {
-                MenuText = "Show Page Inspector...",
+                MenuText = "Page Inspector...",
                 ToolBarText = "Page Inspector",
                 Image = Icons.Get("text")
             };
@@ -248,12 +248,13 @@ namespace ThornWriter
 
             // Inspectors
             PageInspector.ValueChanged += OnPageInspectorValueChanged;
+            PageInspector.DeleteModel += OnDeletePage;
 
             // Load document
             PageInspector.IsRefreshing = true;
             var testStr = "";
             Document.Title = "Test Document";
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 5; i++)
             {
                 testStr += "<b>Hello World</b> #" + i + "\n";
                 Document.Pages.Add(new Page(Document)
@@ -415,12 +416,33 @@ namespace ThornWriter
             aboutDialog.ShowDialog(this);
         }
 
+        public void OnDeletePage(object sender, EventArgs e)
+        {
+            if (CurrentPage != null)
+            {
+                var deletedIndex = CurrentPage.Index;
+                PageSelectorItems.RemoveAt(deletedIndex);
+                Document.Pages.RemoveAt(deletedIndex);
+                PageSelector.SelectedRow = -1;
+                PageSelector.ReloadData();
+                UpdateAppTitle();
+                PageInspector.Model = null;
+            }
+        }
+
         public void OnChangeSelection(object sender, EventArgs e)
         {
             if (CurrentPage != null)
             {
                 PageEditor.Content = CurrentPage.Content;
                 PageInspector.Model = CurrentPage;
+                MainSplitter.Panel2.Visible = true;
+            }
+            else
+            {
+                PageEditor.Content = "";
+                PageInspector.Model = null;
+                MainSplitter.Panel2.Visible = false;
             }
 
             UpdateAppTitle();
