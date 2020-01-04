@@ -5,7 +5,7 @@ namespace ThornWriter
 {
     public static class AppInfo
     {
-        public static System.Version GetVersion()
+        public static Version GetVersion()
         {
             return Assembly.GetEntryAssembly().GetName().Version;
         }

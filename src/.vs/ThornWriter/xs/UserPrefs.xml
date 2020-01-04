@@ -1,48 +1,48 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Windows/MainForm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/AppInfo.cs">
     <Files>
-      <File FileName="ThornWriter/Windows/MainForm.cs" Line="438" Column="51" />
+      <File FileName="ThornWriter/Windows/MainForm.cs" Line="262" Column="41" />
       <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="180" Column="18" />
-      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="71" Column="1" />
-      <File FileName="Thorn/NotebookFile/Notebook.cs" Line="133" Column="43" />
-      <File FileName="ThornWriter/Web/TextEdit.cs" />
-      <File FileName="ThornWriter/Windows/PreferencesForm.cs" />
+      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="76" Column="22" />
+      <File FileName="Thorn/NotebookFile/Notebook.cs" />
+      <File FileName="ThornWriter/Web/TextEdit.cs" Line="1" Column="1" />
+      <File FileName="ThornWriter/Windows/PreferencesForm.cs" Line="1" Column="1" />
       <File FileName="Thorn/NotebookFile/KeyValue.cs" Line="1" Column="1" />
       <File FileName="Thorn/NotebookFile/Dictionary.cs" />
       <File FileName="Thorn/NotebookFile/Page.cs" Line="16" Column="1" />
-      <File FileName="Thorn/NotebookFile/TempFolder.cs" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs" Line="163" Column="1" />
+      <File FileName="Thorn/NotebookFile/TempFolder.cs" Line="42" Column="30" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs" />
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corert/ffcd7990d87e560c63413293c8efe1d1fc4e3584/src/System.Private.CoreLib/shared/System/Number.Parsing.cs" />
-      <File FileName="Thorn/IInspectable.cs" Line="8" Column="95" />
-      <File FileName="Thorn/InspectorValueChangedEventArgs.cs" Line="2" Column="1" />
-      <File FileName="ThornWriter.Desktop/Program.cs" Line="12" Column="1" />
+      <File FileName="ThornWriter.Desktop/Program.cs" />
       <File FileName="Thorn/Web/IWebViewManager.cs" Line="14" Column="40" />
-      <File FileName="../../../../../../Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets" Line="2125" Column="1" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs" Line="268" Column="1" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Collections/Generic/List.cs" Line="161" Column="1" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Collections/ObjectModel/Collection.cs" Line="46" Column="1" />
-      <File FileName="ThornWriter/Web/EtoWebViewManager.cs" Line="45" Column="35" />
+      <File FileName="../../../../../../Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Collections/Generic/List.cs" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Collections/ObjectModel/Collection.cs" />
+      <File FileName="ThornWriter/Web/EtoWebViewManager.cs" />
+      <File FileName="ThornWriter/Web/HtmlRenderer.cs" Line="1" Column="1" />
+      <File FileName="ThornWriter/Resources/DocumentStyle.css" Line="1" Column="1" />
+      <File FileName="ThornWriter/Resources/DocumentBase.html" Line="1" Column="1" />
+      <File FileName="ThornWriter.Desktop/Info.plist" />
+      <File FileName="ThornWriter/AppInfo.cs" Line="13" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ThornWriter" expanded="True">
+          <Node name="ThornWriter" expanded="True" selected="True">
             <Node name="Thorn" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="SdkDependencies" expanded="True" />
               </Node>
               <Node name="Inspectors" expanded="True" />
               <Node name="NotebookFile" expanded="True" />
-              <Node name="Web" expanded="True" />
             </Node>
             <Node name="ThornWriter" expanded="True">
               <Node name="Inspectors" expanded="True" />
               <Node name="Resources" expanded="True" />
               <Node name="Web" expanded="True" />
-              <Node name="Windows" expanded="True">
-                <Node name="MainForm.cs" selected="True" />
-              </Node>
+              <Node name="Windows" expanded="True" />
             </Node>
             <Node name="ThornWriter.Desktop" expanded="True" />
             <Node name="ThornWriter.XamMac" expanded="True">
@@ -50,9 +50,6 @@
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -69,4 +66,5 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <AuthorInfo Name="ianmartinez" Email="ianmartinez97@live.com" Copyright="" Company="" Trademark="" />
 </Properties>

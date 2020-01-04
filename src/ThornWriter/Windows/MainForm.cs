@@ -383,7 +383,7 @@ namespace ThornWriter
         // Notebook Menu
         public void OnPageInspector(object sender, EventArgs e)
         {
-            PageInspector.ShowInspector(this);
+            PageInspector.Show(this);
         }
 
 
@@ -407,12 +407,14 @@ namespace ThornWriter
 
         public void OnAbout(object sender, EventArgs e)
         {
-            var aboutDialog = new AboutDialog();
-            aboutDialog.ProgramName = "Thorn Writer";
-            aboutDialog.Version = "Version " + AppInfo.GetFormattedVersion();
-            aboutDialog.Copyright = string.Format("© 2012-{0} Ian Martinez", DateTime.Now.Year.ToString());
-            aboutDialog.ProgramDescription = "A editor for linguistics.";
-            aboutDialog.License = AppInfo.GetLicense();
+            var aboutDialog = new AboutDialog
+            {
+                ProgramName = "Thorn Writer",
+                Version = "Version " + AppInfo.GetFormattedVersion(),
+                Copyright = string.Format("© 2012-{0} Ian Martinez", DateTime.Now.Year.ToString()),
+                ProgramDescription = "A editor for linguistics.",
+                License = AppInfo.GetLicense()
+            };
             aboutDialog.ShowDialog(this);
         }
 
@@ -481,6 +483,7 @@ namespace ThornWriter
                         CurrentPage.Title = (string)e.NewValue;
                         (PageSelectorItems[CurrentPage.Index] as TreeGridItem).Values[1] = e.NewValue;
                         PageSelector.ReloadData();
+                        PageSelector.ReloadItem(PageSelectorItems[CurrentPage.Index]);
                         UpdateAppTitle();
                     }
                     break;

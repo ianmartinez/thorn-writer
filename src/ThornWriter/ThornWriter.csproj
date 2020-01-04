@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace>ThornWriter</RootNamespace>
-    <PackageVersion>1.0</PackageVersion>
+    <PackageVersion>0.1</PackageVersion>
     <Title>ThornWriter</Title>
     <Copyright>Copyright © 2019</Copyright>
     <Description>Description of ThornWriter</Description>

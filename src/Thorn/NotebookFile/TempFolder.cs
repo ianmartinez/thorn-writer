@@ -26,7 +26,7 @@ namespace Thorn.NotebookFile
             Directory.CreateDirectory(RootFolder);
 
             PagesFolder = Path.Combine(RootFolder, "pages");
-            DataFile = Path.Combine(RootFolder, "data.txt"); 
+            DataFile = Path.Combine(RootFolder, "data.txt");
             PagesFile = Path.Combine(RootFolder, "pages.txt");
             InfoFile = Path.Combine(RootFolder, "info.txt");
             CharactersFile = Path.Combine(RootFolder, "characters.txt");
