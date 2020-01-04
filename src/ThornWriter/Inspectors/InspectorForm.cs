@@ -1,4 +1,5 @@
 ﻿using System;
+using Eto.Drawing;
 using Eto.Forms;
 using Thorn.Inspectors;
 
@@ -11,6 +12,21 @@ namespace ThornWriter.Inspectors
     public abstract class InspectorForm<ModelType, ValueEnumType> : Form
     {
         private ModelType model;
+
+        // Panel to show if there is no item selected to inspect
+        public Panel noModelPanel = new Panel
+        {
+            Content = new Label
+            {
+                Text = "Nothing selected",
+                TextAlignment = TextAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center
+            },
+            Padding = new Padding(10)
+        };
+
+        // Panel to show if there is an item to inspect
+        public Panel modelPanel = new Panel { };
 
         /*
          * If the value is being refreshed automatically, to avoid accidentally
@@ -33,6 +49,7 @@ namespace ThornWriter.Inspectors
             set
             {
                 model = value;
+                Content = (model == null) ? noModelPanel : modelPanel;
                 ModelChanged?.Invoke(this, new EventArgs());
                 RefreshAll();
             }

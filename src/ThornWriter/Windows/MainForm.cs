@@ -190,6 +190,14 @@ namespace ThornWriter
             };
             pageInspectorCommand.Executed += OnPageInspector;
 
+            var notebookInspectorCommand = new Command
+            {
+                MenuText = "Notebook Inspector...",
+                ToolBarText = "Notebook Inspector",
+                Image = Icons.Get("dictionary")
+            };
+            pageInspectorCommand.Executed += OnNotebookInspector;
+
             // Commands - Language
             var charactersCommand = new Command
             {
@@ -386,6 +394,10 @@ namespace ThornWriter
             PageInspector.Show(this);
         }
 
+        public void OnNotebookInspector(object sender, EventArgs e)
+        {
+         //   NotebookInspector.Show(this);
+        }
 
         // Language Menu
         public void OnCharacters(object sender, EventArgs e)

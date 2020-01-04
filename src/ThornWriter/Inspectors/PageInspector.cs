@@ -19,8 +19,6 @@ namespace ThornWriter.Inspectors
         TextBox titleTextBox;
         TextArea notesTextArea;
         NumericStepper indexStepper;
-        Panel noPagePanel;
-        Panel pagePanel;
         Button deletePageButton;
         private bool hasSubscribed;
         
@@ -31,14 +29,6 @@ namespace ThornWriter.Inspectors
             Size = new Size(250, -1);
             MinimumSize = new Size(200, 225);
 
-            noPagePanel = new Panel {
-                Content = new Label {
-                    Text = "No page selected",
-                    TextAlignment = TextAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Center
-                },
-                Padding = new Padding(10)
-            };
             ModelChanged += PageInspector_ModelChanged;
 
             titleTextBox = new TextBox();
@@ -84,10 +74,7 @@ namespace ThornWriter.Inspectors
                     }
             };
 
-            pagePanel = new Panel {
-                Content = pageLayout
-            };
-            Content = (Model == null) ? noPagePanel : pagePanel;
+            modelPanel.Content = pageLayout;
         }
 
         private void PageInspector_ModelChanged(object sender, EventArgs e)
@@ -96,7 +83,6 @@ namespace ThornWriter.Inspectors
 
             if (Model != null)
             {
-                Content = pagePanel;
                 if (Height < 300)
                     Height = 300;
 
@@ -106,10 +92,6 @@ namespace ThornWriter.Inspectors
 
                 Model.ParentNotebook.ValueChanged += ParentNotebook_ValueChanged;
                 hasSubscribed = true;
-            }
-            else
-            {
-                Content = noPagePanel;
             }
         }
 

@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/AppInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Inspectors/NotebookInspector.cs">
     <Files>
-      <File FileName="ThornWriter/Windows/MainForm.cs" Line="262" Column="41" />
-      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="180" Column="18" />
-      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="76" Column="22" />
+      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="109" Column="47" />
       <File FileName="Thorn/NotebookFile/Notebook.cs" />
       <File FileName="ThornWriter/Web/TextEdit.cs" Line="1" Column="1" />
       <File FileName="ThornWriter/Windows/PreferencesForm.cs" Line="1" Column="1" />
@@ -26,11 +24,13 @@
       <File FileName="ThornWriter/Resources/DocumentBase.html" Line="1" Column="1" />
       <File FileName="ThornWriter.Desktop/Info.plist" />
       <File FileName="ThornWriter/AppInfo.cs" Line="13" Column="41" />
+      <File FileName="ThornWriter/Inspectors/NotebookInspector.cs" Line="9" Column="6" />
+      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="51" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ThornWriter" expanded="True" selected="True">
+          <Node name="ThornWriter" expanded="True">
             <Node name="Thorn" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="SdkDependencies" expanded="True" />
@@ -39,7 +39,9 @@
               <Node name="NotebookFile" expanded="True" />
             </Node>
             <Node name="ThornWriter" expanded="True">
-              <Node name="Inspectors" expanded="True" />
+              <Node name="Inspectors" expanded="True">
+                <Node name="NotebookInspector.cs" selected="True" />
+              </Node>
               <Node name="Resources" expanded="True" />
               <Node name="Web" expanded="True" />
               <Node name="Windows" expanded="True" />
