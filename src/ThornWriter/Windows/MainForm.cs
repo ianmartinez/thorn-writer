@@ -468,20 +468,6 @@ namespace ThornWriter
                 CurrentPage.Content = PageEditor.Content;
         }
 
-        private void ReloadPageSelector(int index)
-        {
-            PageSelector.ReloadData();
-            PageSelector.ReloadItem(PageSelectorItems[index]);
-        }
-        
-        private void RenamePage(int index, string newName)
-        {
-            CurrentPage.Title = newName;
-            (PageSelectorItems[index] as TreeGridItem).Values[1] = newName;
-            ReloadPageSelector(index);
-            UpdateAppTitle();
-        }
-
         public void OnChangePageTitle(object sender, GridViewCellEventArgs e)
         {
             if (CurrentPage != null)
@@ -492,9 +478,12 @@ namespace ThornWriter
                  * text = item.Values[1]
                  */
                 var newTitle = item.Values[1].ToString();
+
+                // Change page title
                 CurrentPage.Title = newTitle;
                 UpdateAppTitle();
-                ReloadPageSelector(PageSelectorItems.IndexOf(item));
+                PageSelector.ReloadItem(item);
+                PageInspector.RefreshValue(PageInspectorValue.Title);
             }
         }
 
@@ -505,7 +494,11 @@ namespace ThornWriter
                 case PageInspectorValue.Title:
                     if (CurrentPage != null)
                     {
-                        RenamePage(CurrentPage.Index, (string)e.NewValue);
+                        CurrentPage.Title = (string)e.NewValue;
+                        (PageSelectorItems[CurrentPage.Index] as TreeGridItem).Values[1] = e.NewValue;
+                        PageSelector.ReloadData();
+                        PageSelector.ReloadItem(PageSelectorItems[CurrentPage.Index]);
+                        UpdateAppTitle();
                     }
                     break;
                 case PageInspectorValue.Index:

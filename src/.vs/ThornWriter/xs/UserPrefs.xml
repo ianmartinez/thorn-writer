@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Windows/MainForm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Inspectors/NotebookInspector.cs">
     <Files>
-      <File FileName="ThornWriter/Windows/MainForm.cs" Line="474" Column="1" />
+      <File FileName="ThornWriter/Windows/MainForm.cs" Line="486" Column="34" />
       <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs" Line="163" Column="1" />
+      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="115" Column="48" />
+      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="1" Column="1" />
+      <File FileName="ThornWriter/Inspectors/NotebookInspector.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,12 +20,12 @@
               <Node name="NotebookFile" expanded="True" />
             </Node>
             <Node name="ThornWriter" expanded="True">
-              <Node name="Inspectors" expanded="True" />
+              <Node name="Inspectors" expanded="True">
+                <Node name="NotebookInspector.cs" selected="True" />
+              </Node>
               <Node name="Resources" expanded="True" />
               <Node name="Web" expanded="True" />
-              <Node name="Windows" expanded="True">
-                <Node name="MainForm.cs" selected="True" />
-              </Node>
+              <Node name="Windows" expanded="True" />
             </Node>
             <Node name="ThornWriter.Desktop" expanded="True" />
             <Node name="ThornWriter.XamMac" expanded="True">
