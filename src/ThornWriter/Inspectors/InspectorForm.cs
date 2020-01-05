@@ -14,7 +14,7 @@ namespace ThornWriter.Inspectors
         private ModelType model;
 
         // Panel to show if there is no item selected to inspect
-        public Panel noModelPanel = new Panel
+        public Panel NoModelPanel = new Panel
         {
             Content = new Label
             {
@@ -26,7 +26,7 @@ namespace ThornWriter.Inspectors
         };
 
         // Panel to show if there is an item to inspect
-        public Panel modelPanel = new Panel { };
+        public Panel ModelPanel = new Panel { };
 
         /*
          * If the value is being refreshed automatically, to avoid accidentally
@@ -36,8 +36,10 @@ namespace ThornWriter.Inspectors
 
         // To be fired when the user changes something on the inspector and the value is different
         public event EventHandler<InspectorValueChangedEventArgs<ValueEnumType>> ValueChanged;
+
         // To be fired when the model is changed
         public event EventHandler<EventArgs> ModelChanged;
+
         // When the user has clicked the "delete" button on the inspector
         public event EventHandler<EventArgs> DeleteModel;
 
@@ -61,7 +63,7 @@ namespace ThornWriter.Inspectors
         // Choose which panel to show based on if there is a model or not
         private void UpdatePanel()
         {
-            Content = ModelExists ? modelPanel : noModelPanel;
+            Content = ModelExists ? ModelPanel : NoModelPanel;
         }
 
         // Reload a specific value on the inspector
@@ -102,7 +104,6 @@ namespace ThornWriter.Inspectors
             if (!Visible)
             {
                 UpdatePanel();
-
                 Owner = null;
                 RefreshAll();
                 Show();

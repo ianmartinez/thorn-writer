@@ -1,31 +1,9 @@
 ﻿<Properties StartupConfiguration="{3AF18098-ECB5-463E-BBC2-A747FE78030E}|Default">
   <MonoDevelop.Ide.ItemProperties.ThornWriter.Desktop PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Inspectors/NotebookInspector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThornWriter/Windows/MainForm.cs">
     <Files>
-      <File FileName="ThornWriter/Inspectors/PageInspector.cs" Line="109" Column="47" />
-      <File FileName="Thorn/NotebookFile/Notebook.cs" />
-      <File FileName="ThornWriter/Web/TextEdit.cs" Line="1" Column="1" />
-      <File FileName="ThornWriter/Windows/PreferencesForm.cs" Line="1" Column="1" />
-      <File FileName="Thorn/NotebookFile/KeyValue.cs" Line="1" Column="1" />
-      <File FileName="Thorn/NotebookFile/Dictionary.cs" />
-      <File FileName="Thorn/NotebookFile/Page.cs" Line="16" Column="1" />
-      <File FileName="Thorn/NotebookFile/TempFolder.cs" Line="42" Column="30" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corert/ffcd7990d87e560c63413293c8efe1d1fc4e3584/src/System.Private.CoreLib/shared/System/Number.Parsing.cs" />
-      <File FileName="ThornWriter.Desktop/Program.cs" />
-      <File FileName="Thorn/Web/IWebViewManager.cs" Line="14" Column="40" />
-      <File FileName="../../../../../../Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/System.ObjectModel/src/System/Collections/ObjectModel/ObservableCollection.cs" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Collections/Generic/List.cs" />
-      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/corefx/b79e6eab98c1baed478c738eaf95a1f6ee7f6d98/src/Common/src/CoreLib/System/Collections/ObjectModel/Collection.cs" />
-      <File FileName="ThornWriter/Web/EtoWebViewManager.cs" />
-      <File FileName="ThornWriter/Web/HtmlRenderer.cs" Line="1" Column="1" />
-      <File FileName="ThornWriter/Resources/DocumentStyle.css" Line="1" Column="1" />
-      <File FileName="ThornWriter/Resources/DocumentBase.html" Line="1" Column="1" />
-      <File FileName="ThornWriter.Desktop/Info.plist" />
-      <File FileName="ThornWriter/AppInfo.cs" Line="13" Column="41" />
-      <File FileName="ThornWriter/Inspectors/NotebookInspector.cs" Line="9" Column="6" />
-      <File FileName="ThornWriter/Inspectors/InspectorForm.cs" Line="51" Column="25" />
+      <File FileName="ThornWriter/Windows/MainForm.cs" Line="474" Column="1" />
+      <File FileName="../../../../Library/Caches/VisualStudio/8.0/Symbols/mono/mono/07c23f2ca43c01651fca00644e6638dd0050e4cf/mcs/class/referencesource/mscorlib/system/throwhelper.cs" Line="163" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -39,12 +17,12 @@
               <Node name="NotebookFile" expanded="True" />
             </Node>
             <Node name="ThornWriter" expanded="True">
-              <Node name="Inspectors" expanded="True">
-                <Node name="NotebookInspector.cs" selected="True" />
-              </Node>
+              <Node name="Inspectors" expanded="True" />
               <Node name="Resources" expanded="True" />
               <Node name="Web" expanded="True" />
-              <Node name="Windows" expanded="True" />
+              <Node name="Windows" expanded="True">
+                <Node name="MainForm.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="ThornWriter.Desktop" expanded="True" />
             <Node name="ThornWriter.XamMac" expanded="True">

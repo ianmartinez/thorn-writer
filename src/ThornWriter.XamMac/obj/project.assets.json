@@ -579,7 +579,7 @@
           "bin/placeholder/Thorn.dll": {}
         }
       },
-      "ThornWriter/1.0.0": {
+      "ThornWriter/0.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
@@ -1109,7 +1109,7 @@
           "bin/placeholder/Thorn.dll": {}
         }
       },
-      "ThornWriter/1.0.0": {
+      "ThornWriter/0.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
@@ -1639,7 +1639,7 @@
           "bin/placeholder/Thorn.dll": {}
         }
       },
-      "ThornWriter/1.0.0": {
+      "ThornWriter/0.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
@@ -2169,7 +2169,7 @@
           "bin/placeholder/Thorn.dll": {}
         }
       },
-      "ThornWriter/1.0.0": {
+      "ThornWriter/0.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
@@ -5043,7 +5043,7 @@
       "path": "../Thorn/Thorn.csproj",
       "msbuildProject": "../Thorn/Thorn.csproj"
     },
-    "ThornWriter/1.0.0": {
+    "ThornWriter/0.1.0": {
       "type": "project",
       "path": "../ThornWriter/ThornWriter.csproj",
       "msbuildProject": "../ThornWriter/ThornWriter.csproj"
@@ -5052,7 +5052,7 @@
   "projectFileDependencyGroups": {
     "Xamarin.Mac,Version=v2.0": [
       "Eto.Platform.XamMac2 >= 2.4.1",
-      "ThornWriter >= 1.0.0"
+      "ThornWriter >= 0.1.0"
     ]
   },
   "packageFolders": {

@@ -59,10 +59,7 @@ namespace ThornWriter.Inspectors
                             Orientation = Orientation.Vertical,
                             HorizontalContentAlignment = HorizontalAlignment.Center,
                             VerticalContentAlignment = VerticalAlignment.Center,
-                            Items =
-                            {
-                                deletePageButton
-                            }
+                            Items = { deletePageButton }
                         }),
                         new TableRow(new Label { Text = "Title:", VerticalAlignment = VerticalAlignment.Bottom }),
                         new TableRow(new TableCell(titleTextBox, true)),
@@ -73,7 +70,7 @@ namespace ThornWriter.Inspectors
                     }
             };
 
-            modelPanel.Content = pageLayout;
+            ModelPanel.Content = pageLayout;
         }
 
         private void PageInspector_ModelChanged(object sender, EventArgs e)
