@@ -7,6 +7,7 @@
     <Title>ThornWriter</Title>
     <Copyright>Copyright © 2019</Copyright>
     <Description>Description of ThornWriter</Description>
+    <ApplicationIcon>win.ico</ApplicationIcon>
   </PropertyGroup>
   
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
