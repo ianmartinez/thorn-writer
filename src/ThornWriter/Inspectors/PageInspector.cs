@@ -25,8 +25,8 @@ namespace ThornWriter.Inspectors
         public PageInspector()
         {
             UpdateTitle();
-            Size = new Size(250, -1);
-            MinimumSize = new Size(200, 225);
+            MinimumSize = new Size(250, 375);
+            Size = MinimumSize;
 
             ModelChanged += PageInspector_ModelChanged;
 

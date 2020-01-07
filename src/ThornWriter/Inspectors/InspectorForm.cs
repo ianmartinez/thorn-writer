@@ -98,9 +98,16 @@ namespace ThornWriter.Inspectors
             DeleteModel?.Invoke(this, new EventArgs());
         }
 
+        private bool hasSubscribed = false;
         // Call instead of the standard .Show() method
         public void Show(Form parent)
         {
+            if(!hasSubscribed)
+            {
+                Closing += InspectorForm_Closing;
+                hasSubscribed = true;
+            }
+
             if (!Visible)
             {
                 UpdatePanel();
@@ -109,6 +116,16 @@ namespace ThornWriter.Inspectors
                 Show();
                 Owner = parent;
             }
+        }
+
+        /*
+         * For some reason, the Visible value is not returned correctly on Windows after a form is closed,
+         * so instead, inspectors are never *really* closed, just hidden
+         */
+        private void InspectorForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            Visible = false;
         }
     }
 }

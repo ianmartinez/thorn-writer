@@ -11,3 +11,16 @@
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/obj/Debug/netstandard1.6/ThornWriter.csproj.CopyComplete
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/obj/Debug/netstandard1.6/ThornWriter.dll
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/ThornWriter/obj/Debug/netstandard1.6/ThornWriter.pdb
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\bin\Debug\netstandard1.6\ThornWriter.deps.json
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\bin\Debug\netstandard1.6\ThornWriter.dll
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\bin\Debug\netstandard1.6\ThornWriter.pdb
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\bin\Debug\netstandard1.6\Thorn.dll
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\bin\Debug\netstandard1.6\Thorn.pdb
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\obj\Debug\netstandard1.6\ThornWriter.csprojAssemblyReference.cache
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\obj\Debug\netstandard1.6\ThornWriter.Resources.resources
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\obj\Debug\netstandard1.6\ThornWriter.csproj.GenerateResource.cache
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\obj\Debug\netstandard1.6\ThornWriter.AssemblyInfoInputs.cache
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\obj\Debug\netstandard1.6\ThornWriter.AssemblyInfo.cs
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\obj\Debug\netstandard1.6\ThornWriter.csproj.CopyComplete
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\obj\Debug\netstandard1.6\ThornWriter.dll
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter\obj\Debug\netstandard1.6\ThornWriter.pdb

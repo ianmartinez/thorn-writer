@@ -6,6 +6,7 @@ using Thorn.Web;
 using System;
 using ThornWriter.Inspectors;
 using Thorn.Inspectors;
+using Thorn;
 
 namespace ThornWriter
 {
@@ -21,7 +22,7 @@ namespace ThornWriter
             {
                 var pageIndex = PageSelector.SelectedRow;
 
-                if (pageIndex != -1)
+                if (pageIndex != -1 && pageIndex < Document.Pages.Count)
                     return Document.Pages[pageIndex];
 
                 return null;
@@ -69,7 +70,7 @@ namespace ThornWriter
                 Editable = true,
             });
             PageSelector.ShowHeader = false;
-            PageSelector.Columns[0].Width = 400;
+            PageSelector.Columns[0].AutoSize = true;
             PageSelector.Border = BorderType.None;
             PageSelector.SelectionChanged += OnChangeSelection;
             PageSelector.CellEdited += OnChangePageTitle;
@@ -84,6 +85,7 @@ namespace ThornWriter
             // Main Splitter
             MainSplitter.Panel1 = PageSelector;
             PageSelector.BackgroundColor = Color.FromArgb(0, 0, 0, 0);
+
             MainSplitter.Panel2 = DocumentSplitter;
             MainSplitter.Orientation = Orientation.Horizontal;
             MainSplitter.Position = 1 * (ClientSize.Width / 3);
@@ -251,7 +253,7 @@ namespace ThornWriter
                         newNotebookCommand, openNotebookCommand, saveNotebookCommand,
                         new SeparatorToolItem() { Type = SeparatorToolItemType.FlexibleSpace },
                         charactersCommand, dictionaryCommand
-                    }
+                    }                
             };
 
             // Inspectors

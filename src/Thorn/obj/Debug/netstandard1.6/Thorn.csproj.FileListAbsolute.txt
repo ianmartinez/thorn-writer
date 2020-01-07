@@ -6,3 +6,11 @@
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/obj/Debug/netstandard1.6/Thorn.dll
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/obj/Debug/netstandard1.6/Thorn.pdb
 /Users/ianmartinez/Documents/GitHub/thorn-writer/src/Thorn/obj/Debug/netstandard1.6/Thorn.csprojAssemblyReference.cache
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\Thorn\bin\Debug\netstandard1.6\Thorn.deps.json
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\Thorn\bin\Debug\netstandard1.6\Thorn.dll
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\Thorn\bin\Debug\netstandard1.6\Thorn.pdb
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\Thorn\obj\Debug\netstandard1.6\Thorn.csprojAssemblyReference.cache
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\Thorn\obj\Debug\netstandard1.6\Thorn.AssemblyInfoInputs.cache
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\Thorn\obj\Debug\netstandard1.6\Thorn.AssemblyInfo.cs
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\Thorn\obj\Debug\netstandard1.6\Thorn.dll
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\Thorn\obj\Debug\netstandard1.6\Thorn.pdb

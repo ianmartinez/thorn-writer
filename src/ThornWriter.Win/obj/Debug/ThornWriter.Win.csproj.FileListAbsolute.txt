@@ -1,0 +1,14 @@
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\ThornWriter.Win.exe.config
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\ThornWriter.Win.exe
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\ThornWriter.Win.pdb
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\Eto.dll
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\Thorn.dll
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\ThornWriter.dll
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\ThornWriter.pdb
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\Thorn.pdb
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\Eto.xml
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\obj\Debug\ThornWriter.Win.csprojAssemblyReference.cache
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\obj\Debug\ThornWriter.Win.csproj.CopyComplete
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\obj\Debug\ThornWriter.Win.exe
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\obj\Debug\ThornWriter.Win.pdb
+C:\Users\ianma\Documents\GitHub\thorn-writer\src\ThornWriter.Win\bin\Debug\Eto.Wpf.dll
